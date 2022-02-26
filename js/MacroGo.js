@@ -16,7 +16,7 @@ function TDEE() {
   
   var totalDailyCalories = TDEE + sruplusCalories;
   
-  if bodyFat < .15 {
+  if (bodyFat < .15) {
     protienRequirement = weight;
   } else {
    protienRequirement = weight * 0.8;
