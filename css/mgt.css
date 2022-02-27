@@ -64,3 +64,11 @@ body {
 .TDEE {
   border: 1px solid green;
 }
+
+.macrosBlock {
+  padding-left: 2.5%;
+}
+
+.tdeeButton {
+  margin-left: 2.5%;
+}
