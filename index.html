@@ -142,5 +142,70 @@
       <p>Carbs: </p>
     </div>
 
+    <!--TO DO: Take user input and average out the 7-day input for calories and weight.-->
+    <div id="StatsTable">
+        <h3>Enter your calorie intake and weight (daily).</h3>
+        <table>
+            <tr>
+                <th>Week</th>
+            </tr>
+
+            <tr>
+                <td><input type="date" id="Week"></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                
+                <th>Stats</th>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th></th>
+                <th>Average</th>
+            </tr>
+            <tr>
+
+                <td>Weight</td>
+                <td><input type="text" id="SunWeight"></td>
+                <td><input type="text" id="MonWeight"></td>
+                <td><input type="text" id="TuesWeight"></td>
+                <td><input type="text" id="WedWeight"></td>
+                <td><input type="text" id="ThursWeight"></td>
+                <td><input type="text" id="FriWeight"></td>
+                <td><input type="text" id="SatWeight"></td>
+                <td><input type="button" id="weightButton" value="Calculate"
+                onclick="WeightAvg()"></td>
+                <td id="AverageWeight"></td>
+            </tr>
+
+        </table>
+
+        <table>
+            <tr>
+                <td>Calories</td>
+                <td><input type="text" id="SunCalories"></td>
+                <td><input type="text" id="MonCalories"></td>
+                <td><input type="text" id="TuesCalories"></td>
+                <td><input type="text" id="WedCalories"></td>
+                <td><input type="text" id="ThursCalories"></td>
+                <td><input type="text" id="FriCalories"></td>
+                <td><input type="text" id="SatCalories"></td>
+                <td><input type="button" id="calorieButton" value="Calculate"
+                    onclick="CalorieAvg()"></td>
+                <td id="AverageCalories"></td>
+            </tr>
+
+        </table>       
+    </div>
+
+
+
+
+
   </body>
 </html>
