@@ -1,5 +1,5 @@
 function TDEE() {
-  var weight = document.getElementById("bodyweight");
+  var weight = document.getElementById("currentWeight");
   var bodyFat = document.getElementById("estBodyFatPercent");
   
   var surplusCalories;
@@ -25,4 +25,12 @@ function TDEE() {
   carbRequirement = (totalDailyCalories * 0.4)/4;
   
   fatRequirement = (totalDailyCalories * 0.3)/9;
+}
+
+function GoalWeightChange() {
+  var weight = document.getElementById("currentWeight");
+  var bodyFat = document.getElementById("estBodyFatPercentage");
+
+
+  
 }
