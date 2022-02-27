@@ -31,6 +31,9 @@ function GoalWeightChange() {
   var weight = document.getElementById("currentWeight");
   var bodyFat = document.getElementById("estBodyFatPercentage");
 
-
-  
+  if (weight <= 150) {
+    recWeightLoss = (weight * .01) - .05; 
+  } else if (weight >= 150 ) {
+    recWeightLoss = (weight * .01) - 1;
+  }
 }
