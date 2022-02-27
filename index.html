@@ -172,13 +172,13 @@
             <tr>
 
                 <td>Weight</td>
-                <td><input type="text" id="SunWeight"></td>
-                <td><input type="text" id="MonWeight"></td>
-                <td><input type="text" id="TuesWeight"></td>
-                <td><input type="text" id="WedWeight"></td>
-                <td><input type="text" id="ThursWeight"></td>
-                <td><input type="text" id="FriWeight"></td>
-                <td><input type="text" id="SatWeight"></td>
+                <td><input type="number" id="SunWeight" oninput="validateFormNumber('SunWeight')"></td>
+                <td><input type="number" id="MonWeight" oninput="validateFormNumber('MonWeight')"></td>
+                <td><input type="number" id="TuesWeight" oninput="validateFormNumber('TuesWeight')"></td>
+                <td><input type="number" id="WedWeight" oninput="validateFormNumber('WedWeight')"></td>
+                <td><input type="number" id="ThursWeight" oninput="validateFormNumber('ThursWeight')"></td>
+                <td><input type="number" id="FriWeight" oninput="validateFormNumber('FriWeight')"></td>
+                <td><input type="number" id="SatWeight" oninput="validateFormNumber('SatWeight')"></td>
                 <td><input type="button" id="weightButton" value="Calculate"
                 onclick="WeightAvg()"></td>
                 <td id="AverageWeight"></td>
@@ -189,13 +189,13 @@
         <table>
             <tr>
                 <td>Calories</td>
-                <td><input type="text" id="SunCalories"></td>
-                <td><input type="text" id="MonCalories"></td>
-                <td><input type="text" id="TuesCalories"></td>
-                <td><input type="text" id="WedCalories"></td>
-                <td><input type="text" id="ThursCalories"></td>
-                <td><input type="text" id="FriCalories"></td>
-                <td><input type="text" id="SatCalories"></td>
+                <td><input type="number" id="SunCalories" oninput="validateFormNumber('SunCalories')"></td>
+                <td><input type="number" id="MonCalories" oninput="validateFormNumber('MonCalories')"></td>
+                <td><input type="number" id="TuesCalories" oninput="validateFormNumber('TuesCalories')"></td>
+                <td><input type="number" id="WedCalories" oninput="validateFormNumber('WedCalories')"></td>
+                <td><input type="number" id="ThursCalories" oninput="validateFormNumber('ThursCalories')"></td>
+                <td><input type="number" id="FriCalories" oninput="validateFormNumber('FriCalories')"></td>
+                <td><input type="number" id="SatCalories" oninput="validateFormNumber('SatCalories')"></td>
                 <td><input type="button" id="calorieButton" value="Calculate"
                     onclick="CalorieAvg()"></td>
                 <td id="AverageCalories"></td>
