@@ -4,7 +4,7 @@ function TDEE() {
   
   var surplusCalories;
   
-  var protienRequirement;
+  var proteinRequirement;
   var carbRequirement;
   var fatRequirement;
   
@@ -14,12 +14,12 @@ function TDEE() {
   var NEAT = 250;
   var TDEE = BMR + TEF + EEE + NEAT;
   
-  var totalDailyCalories = TDEE + sruplusCalories;
+  var totalDailyCalories = TDEE + surplusCalories;
   
-  if bodyFat < .15 {
-    protienRequirement = weight;
+  if (bodyFat < .15) {
+    proteinRequirement = weight;
   } else {
-   protienRequirement = weight * 0.8;
+   proteinRequirement = weight * 0.8;
   }
   
   carbRequirement = (totalDailyCalories * 0.4)/4;
