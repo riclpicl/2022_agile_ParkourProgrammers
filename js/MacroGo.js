@@ -72,7 +72,7 @@ function TDEE() {
     }
 
   }
-  surplusCalories = totalDailyCalories - TDEE;
+  surplusCalories = Math.round(totalDailyCalories - TDEE);
   
   if (trainingExperience == "beginner") {
     if (trainingGoal == "bulk") {

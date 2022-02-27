@@ -31,4 +31,4 @@ function Disappear() {
 }
 
 //Onload required to activate the function to initially hide the custom weight change and alternative selection descriptions based on experience level.
-window.onload = Disappear().init();
+window.onload = Disappear();
