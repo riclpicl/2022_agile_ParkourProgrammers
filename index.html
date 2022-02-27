@@ -29,9 +29,9 @@
       </div>
       
       <div class="tooltip">
-        <label>Bodyweight:</label>
+        <label>Current Weight:</label>
         <div>
-          <input type="number" step="0.1" id="bodyweight" name="bodyweight" oninput="validateFormNumber('bodyweight')">
+          <input type="number" step="0.1" id="currentWeight" name="currentWeight" oninput="validateFormNumber('currentWeight')">
           <span class="tooltiptext">Please enter a valid number</span>
         </div>
       </div>
@@ -100,9 +100,12 @@
           <li>
             <h4>Your Recommended Training Phase:</h4>
             <p id="recPhase">[OUTPUT HERE]</p>
-            <p id="recWeightChangeWeekly">[OUTPUT HERE]</p>
+
+            <output id="recWeightChangeWeekly"></output>
+            
             <p id="recPhaseDesc">[OUTPUT HERE]</p>
           </li>
+          <li>
         </ol>
 
       </div>
