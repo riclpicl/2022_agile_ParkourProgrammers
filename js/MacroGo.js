@@ -182,14 +182,35 @@ function trainingPhaseRec() {
 
 
 function GoalWeightChange() {
-  var weight = document.getElementById("currentWeight");
-  var bodyFat = document.getElementById("estBodyFatPercentage");
+  var weight = document.getElementById("currentWeight").value;
+  var bodyFat = document.getElementById("estBodyFatPercent").value;
+  var trainingExperience = document.getElementById("experience").value;
+  var trainingGoal = document.getElementById("currentGoal").value;
+  var sex = document.getElementById("userSex").value;
 
-  if (weight <= 150) {
-    recWeightLoss = (weight * .01) - .05; 
-  } else if (weight >= 150 ) {
-    recWeightLoss = (weight * .01) - 1;
-  }
+  var weightGain;
+  var weightLoss;
+
+  if (sex == female) {
+    if (trainingGoal == bulk){
+      if (trainingExperience == "beginner") {
+        if (bodyFat < 30) {
+        weightGain = Math.round(weight * .01)/4;
+        } else if (trainingExperience == "intermediate") {
+          weightGain = Math.round(weight * .05)/4;
+        } else if (trainingExperience == "expert") {
+          weightGain = Math.round(weight * .025)/4;
+        }
+      }
+    }
+    } else if (trainingGoal == "weightloss") {
+    if (bodyFat > 40) {
+      weightLoss = Math.round(weight * .01)/4;
+    } else if (bodyFat <= 40 || bodyFat >= 35) {
+      weightLoss = Math.round(weight * .075)/4;
+    } else if (bodyFat < 30 || bodyFat <= 34)
+    weightLoss = Math.round(weight * .05)/4;
+  } 
 }
 
 
