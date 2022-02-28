@@ -193,24 +193,37 @@ function GoalWeightChange() {
       if (trainingExperience == "beginner") {
         if (bodyFat < 30) {
         weightGain = Math.round(weight * .01)/4;
+        document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+        document.getElementById("recWeightChangeWeekly").innerHTML += weightGain;
         } else if (trainingExperience == "intermediate") {
           weightGain = Math.round(weight * .05)/4;
+          document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+          document.getElementById("recWeightChangeWeekly").innerHTML += weightGain;
         } else if (trainingExperience == "expert") {
           weightGain = Math.round(weight * .025)/4;
+          document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+          document.getElementById("recWeightChangeWeekly").innerHTML += weightGain;
         }
       }
-
-      document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
-
-      document.getElementById("recWeightChangeWeekly").innerHTML += weightGain;
-
     } else if (trainingGoal == "weightloss") {
     if (bodyFat > 40) {
       weightLoss = Math.round(weight * .01)/4;
+      document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+      document.getElementById("recWeightChangeWeekly").innerHTML += weightLoss;
     } else if (bodyFat <= 40 || bodyFat >= 35) {
       weightLoss = Math.round(weight * .075)/4;
+      document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+      document.getElementById("recWeightChangeWeekly").innerHTML += weightLoss;
     } else if (bodyFat < 30 || bodyFat <= 34)
     weightLoss = Math.round(weight * .05)/4;
+    document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+    document.getElementById("recWeightChangeWeekly").innerHTML += weightLoss;
   }
   
   document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
@@ -222,10 +235,19 @@ function GoalWeightChange() {
       if (trainingExperience == "beginner") {
         if (bodyFat < 20) {
           weightGain = Math.round(weight * .01)/4;
+          document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+          document.getElementById("recWeightChangeWeekly").innerHTML += weightGain;
         } else if (trainingExperience == "intermediate") {
           weightGain = Math.round(weight * .05)/4;
+          document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+          document.getElementById("recWeightChangeWeekly").innerHTML += weightGain;
         } else if (trainingExperience == "expert") {
           weightGain = Math.round(weight * .025)/4;
+          document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+          document.getElementById("recWeightChangeWeekly").innerHTML += weightGain;
         }
       }
 
@@ -236,10 +258,19 @@ function GoalWeightChange() {
     } else if (trainingGoal == "weightloss") {
       if (bodyFat > 30) {
         weightLoss = Math.round(weight * .01)/4;
+        document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+        document.getElementById("recWeightChangeWeekly").innerHTML += weightLoss;
       } else if (bodyFat <= 30 || bodyFat >= 25) {
         weightLoss = Math.round(weight * .075)/4;
+        document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+        document.getElementById("recWeightChangeWeekly").innerHTML += weightLoss;
       } else if (bodyFat < 20 || bodyFat <= 24) {
         weightLoss = Math.round(weight * .05)/4;
+        document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+        document.getElementById("recWeightChangeWeekly").innerHTML += weightLoss;
       }
 
       document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
