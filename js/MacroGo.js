@@ -178,9 +178,6 @@ function trainingPhaseRec() {
 
 }
 
-
-
-
 function GoalWeightChange() {
   var weight = document.getElementById("currentWeight").value;
   var bodyFat = document.getElementById("estBodyFatPercent").value;
@@ -202,6 +199,11 @@ function GoalWeightChange() {
           weightGain = Math.round(weight * .025)/4;
         }
       }
+
+      document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+      document.getElementById("recWeightChange").innerHTML += weightGain;
+
     } else if (trainingGoal == "weightloss") {
     if (bodyFat > 40) {
       weightLoss = Math.round(weight * .01)/4;
@@ -209,7 +211,12 @@ function GoalWeightChange() {
       weightLoss = Math.round(weight * .075)/4;
     } else if (bodyFat < 30 || bodyFat <= 34)
     weightLoss = Math.round(weight * .05)/4;
-  } 
+  }
+  
+  document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+  document.getElementById("recWeightChange").innerHTML += weightLoss;
+
   } else if (sex == male) {
     if (trainingGoal == "bulk") {
       if (trainingExperience == "beginner") {
@@ -221,6 +228,11 @@ function GoalWeightChange() {
           weightGain = Math.round(weight * .025)/4;
         }
       }
+
+      document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+      document.getElementById("recWeightChange").innerHTML += weightGain;
+
     } else if (trainingGoal == "weightloss") {
       if (bodyFat > 30) {
         weightLoss = Math.round(weight * .01)/4;
@@ -229,6 +241,11 @@ function GoalWeightChange() {
       } else if (bodyFat < 20 || bodyFat <= 24) {
         weightLoss = Math.round(weight * .05)/4;
       }
+
+      document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+
+      document.getElementById("recWeightChange").innerHTML += weightLoss;
+      
     }
   }
 }
