@@ -100,15 +100,15 @@
           <li>
             <h4>Your Recommended Training Phase:</h4>
             <p id="recPhase">[OUTPUT HERE]</p>
-            <h2>Recommended Weight Change Per Week:</h2><br>
-            <output id="recWeightChangeWeekly"></output>
+            <h4>Recommended Weight Change Per Week:</h4><br>
+            <p id="recWeightChangeWeekly">[OUTPUT HERE]</p>
             
             <p id="recPhaseDesc">[OUTPUT HERE]</p>
           </li>
         </ol>
 
 	<!--We can change location of button, just making sure code works with method -->
-	<input class="goalChangeButton" type="button" id="goalChangeButton" value="Calculate" onclick="trainingPhaseRec()">
+	<input class="goalChangeButton" type="button" id="goalChangeButton" value="Calculate" onclick="trainingPhaseRec(); GoalWeightChange();">
 
       </div>
       
