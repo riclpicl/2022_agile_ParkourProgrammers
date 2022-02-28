@@ -159,6 +159,28 @@ function TDEE() {
   
 }
 
+function trainingPhaseRec() {
+    var bodyFat = document.getElementById("estBodyFatPercent").value;
+    var sex = document.getElementById("userSex").value;
+
+    var Tone = "Toning Phase";
+    var Bulk = "Bulking Phase";
+    var WeightLoss = "Weightloss Phase";
+    
+
+    if (bodyFat >= 22 && sex == "female" || bodyFat >= 18 && sex == "male") {
+        document.getElementById("recPhase").innerText = WeightLoss;
+    } else if (bodyFat <= 16 && sex == "female" || bodyFat <= 6 && sex == "male") {
+        document.getElementById("recPhase").innerText = Bulk;
+    } else {
+        document.getElementById("recPhase").innerText = Tone;
+    }
+
+}
+
+
+
+
 function GoalWeightChange() {
   var weight = document.getElementById("currentWeight");
   var bodyFat = document.getElementById("estBodyFatPercentage");
