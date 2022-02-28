@@ -230,7 +230,7 @@ function GoalWeightChange() {
   }
   document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
   if (trainingGoal == "bulk") {
-    document.getElementById("recWeightChangeWeekly").innerHTML += ("+ " + weightLoss);
+    document.getElementById("recWeightChangeWeekly").innerHTML += ("+ " + weightGain);
   } else if (trainingGoal == "weightloss"){
     document.getElementById("recWeightChangeWeekly").innerHTML += ("- " + weightLoss);
   }
