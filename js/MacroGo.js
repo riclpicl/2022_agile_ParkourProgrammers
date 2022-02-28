@@ -202,7 +202,7 @@ function GoalWeightChange() {
 
       document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
 
-      document.getElementById("recWeightChange").innerHTML += weightGain;
+      document.getElementById("recWeightChangeWeekly").innerHTML += weightGain;
 
     } else if (trainingGoal == "weightloss") {
     if (bodyFat > 40) {
@@ -215,7 +215,7 @@ function GoalWeightChange() {
   
   document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
 
-  document.getElementById("recWeightChange").innerHTML += weightLoss;
+  document.getElementById("recWeightChangeWeekly").innerHTML += weightLoss;
 
   } else if (sex == male) {
     if (trainingGoal == "bulk") {
@@ -231,7 +231,7 @@ function GoalWeightChange() {
 
       document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
 
-      document.getElementById("recWeightChange").innerHTML += weightGain;
+      document.getElementById("recWeightChangeWeekly").innerHTML += weightGain;
 
     } else if (trainingGoal == "weightloss") {
       if (bodyFat > 30) {
@@ -244,8 +244,8 @@ function GoalWeightChange() {
 
       document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
 
-      document.getElementById("recWeightChange").innerHTML += weightLoss;
-      
+      document.getElementById("recWeightChangeWeekly").innerHTML += weightLoss;
+
     }
   }
 }
