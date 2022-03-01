@@ -184,11 +184,12 @@ function GoalWeightChange() {
   var trainingExperience = document.getElementById("experience").value;
   var trainingGoal = document.getElementById("currentGoal").value;
   var sex = document.getElementById("userSex").value;
+  var reccomendedWeightChangeText = document.getElementById("recWeightChangeWeekly")
 
   var weightGain;
   var weightLoss;
 
-  if (sex == female) {
+  if (sex == "female") {
     if (trainingGoal == "bulk") {
       if (trainingExperience == "beginner") {
         if (bodyFat < 30) {
@@ -207,7 +208,7 @@ function GoalWeightChange() {
       } else if (bodyFat < 30 || bodyFat <= 34)
         weightLoss = Math.round(weight * .05) / 4;
     }
-  } else if (sex == male) {
+  } else if (sex == "male") {
     if (trainingGoal == "bulk") {
       if (trainingExperience == "beginner") {
         if (bodyFat < 20) {
@@ -228,11 +229,11 @@ function GoalWeightChange() {
       }
     }
   }
-  document.getElementById("recWeightChangeWeekly").removeChild(document.getElementById("recWeightChangeWeekly").lastChild);
+  reccomendedWeightChangeText.removeChild(reccomendedWeightChangeText).lastChild);
   if (trainingGoal == "bulk") {
-    document.getElementById("recWeightChangeWeekly").innerHTML += ("+ " + weightGain);
+    reccomendedWeightChangeText.innerHTML += ("+ " + weightGain);
   } else if (trainingGoal == "weightloss"){
-    document.getElementById("recWeightChangeWeekly").innerHTML += ("- " + weightLoss);
+    reccomendedWeightChangeText.innerHTML += ("- " + weightLoss);
   }
 }
 
