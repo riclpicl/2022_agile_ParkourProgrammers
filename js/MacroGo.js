@@ -229,7 +229,6 @@ function GoalWeightChange() {
       }
     }
   }
-  recommendedWeightChangeText.removeChild(recommendedWeightChangeText.lastChild);
   if (trainingGoal == "bulk") {
     recommendedWeightChangeText.innerHTML += ("+ " + weightGain);
   } else if (trainingGoal == "weightloss"){
