@@ -18,6 +18,8 @@ function TDEE() {
   var NEAT = 150;
   var TDEE = Math.round(BMR + TEF + EEE + NEAT);
 
+
+  // total daily calories section
   if (sex == "female") {
     if (trainingExperience == "beginner") {
       if (trainingGoal == "bulk") {
@@ -74,6 +76,7 @@ function TDEE() {
   }
   surplusCalories = Math.round(totalDailyCalories - TDEE);
 
+  //Macro Requirement section. Protien requirements are based on exercise experience, training goal, as well as body fat percentage
   if (trainingExperience == "beginner") {
     if (trainingGoal == "bulk") {
       if (bodyFat < 15) {
@@ -135,10 +138,16 @@ function TDEE() {
       }
     }
   }
+  
+  // Fat and Carb Requirements based on how many calories of protein are consumed
+  var fatAndCarbCalories = totalDailyCalories - (proteinRequirement * 4);
+  var proteinCalories = totalDailyCalories - fatAndCarbCalories;
+  var proteinPercentage = proteinCalories/totalDailyCalories;
+  var fatAndCarbPercentage = 100 - proteinPercentage;
+  
+  carbRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.6)) / 4);
 
-  carbRequirement = Math.round((totalDailyCalories * 0.4) / 4);
-
-  fatRequirement = Math.round((totalDailyCalories * 0.3) / 9);
+  fatRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.4)) / 9);
 
   //Empty the paragraph tags each time button is pressed
 
