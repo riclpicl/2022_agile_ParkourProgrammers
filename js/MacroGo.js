@@ -1,6 +1,7 @@
 function TDEE() {
   var weight = document.getElementById("currentWeight").value;
   var weightKgs = weight * 0.453592;
+  var lbs_kgs = document.getElementById("Lbs_Kgs");
   var bodyFat = document.getElementById("estBodyFatPercent").value;
   var trainingExperience = document.getElementById("experience").value;
   var trainingGoal = document.getElementById("currentGoal").value;
@@ -11,8 +12,13 @@ function TDEE() {
   var proteinRequirement;
   var carbRequirement;
   var fatRequirement;
+  
+  if (lbs_kgs.checked) {
+    console.log("checked");
+    weight = weight / 0.453592;
+  }
 
-  var BMR = weightKgs * 20;
+  var BMR = (weight * 0.453592) * 20;
   var TEF = BMR * 0.1;
   var EEE = 150;
   var NEAT = 150;
@@ -143,7 +149,7 @@ function TDEE() {
   var fatAndCarbCalories = totalDailyCalories - (proteinRequirement * 4);
   var proteinCalories = totalDailyCalories - fatAndCarbCalories;
   var proteinPercentage = proteinCalories/totalDailyCalories;
-  var fatAndCarbPercentage = 100 - proteinPercentage;
+  var fatAndCarbPercentage = 1 - proteinPercentage;
   
   carbRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.6)) / 4);
 
@@ -161,7 +167,7 @@ function TDEE() {
   //Polulate with current information
   document.getElementById("currentTDEE").innerHTML += ("Your Current TDEE is: " + TDEE + " calories");
   document.getElementById("dailySurplus").innerHTML += ("Your Target Daily Surplus: " + surplusCalories + " calories");
-  document.getElementById("totalCalories").innerHTML += ("Target Daily Calorie Intake: " + totalDailyCalories + " calories");
+  document.getElementById("totalCalories").innerHTML += ("Target Daily Calorie Intake: " + Math.round(totalDailyCalories) + " calories");
   document.getElementById("protienMacro").innerHTML += ("Protein: " + proteinRequirement + " grams");
   document.getElementById("fatMacro").innerHTML += ("Fat: " + fatRequirement + " grams");
   document.getElementById("carbMacro").innerHTML += ("Carbs: " + carbRequirement + " grams");

@@ -74,6 +74,12 @@ body {
   margin-left: 2.5%;
 }
 
+label p {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 10px;
+  padding-left: 10px;
+}
+
 .toggle {
   display: flex;
   gap: 10px;
@@ -118,11 +124,11 @@ body {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #6456f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #6456f3;
 }
 
 input:checked + .slider:before {
