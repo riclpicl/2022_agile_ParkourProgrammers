@@ -188,38 +188,43 @@ function GoalWeightChange() {
 
   var weightGain;
   var weightLoss;
+  var maintain;
 
-  if (sex == "female") {
-    if (trainingGoal == "bulk") {
-      if (trainingExperience == "beginner") {
+
+  if (sex === "female") {
+    if (trainingGoal === "bulk") {
+      if (trainingExperience === "beginner") {
         if (bodyFat < 30) {
           weightGain = Math.round(weight * 0.01) / 4;
-        } else if (trainingExperience == "intermediate") {
-
-        } else if (trainingExperience == "expert") {
+        } else if (trainingExperience === "intermediate") {
+          weightGain = Math.round(weight * 0.015) / 4;
+        } else if (trainingExperience === "expert") {
           weightGain = Math.round(weight * 0.025) / 4;
         }
       }
-    } else if (trainingGoal == "weightloss") {
+    } else if (trainingGoal === "weightloss") {
       if (bodyFat > 40) {
         weightLoss = Math.round(weight * 0.01) / 4;
       } else if (bodyFat <= 40 || bodyFat >= 35) {
         weightLoss = Math.round(weight * 0.075) / 4;
-      } else if (bodyFat < 30 || bodyFat <= 34)
-        weightLoss = Math.round(weight * 0.05) / 4;
+      } else if (bodyFat < 30 || bodyFat <= 34) {
+      weightLoss = Math.round(weight * 0.05) / 4;
+      }    
+    } else if (trainingGoal === "tone") {
+          maintain = 0;
     }
-  } else if (sex == "male") {
-    if (trainingGoal == "bulk") {
-      if (trainingExperience == "beginner") {
+  } else if (sex === "male") {  
+    if (trainingGoal === "bulk") {    
+      if (trainingExperience === "beginner") {        
         if (bodyFat < 20) {
           weightGain = Math.round(weight * 0.01) / 4;
-        } else if (trainingExperience == "intermediate") {
+        } else if (trainingExperience === "intermediate") {
           weightGain = Math.round(weight * 0.05) / 4;
-        } else if (trainingExperience == "expert") {
+        } else if (trainingExperience === "expert") {
           weightGain = Math.round(weight * 0.025) / 4;
         }
       }
-    } else if (trainingGoal == "weightloss") {
+    } else if (trainingGoal === "weightloss") {
       if (bodyFat > 30) {
         weightLoss = Math.round(weight * 0.01) / 4;
       } else if (bodyFat <= 30 || bodyFat >= 25) {
@@ -227,12 +232,16 @@ function GoalWeightChange() {
       } else if (bodyFat < 20 || bodyFat <= 24) {
         weightLoss = Math.round(weight * 0.05) / 4;
       }
+    } else if (trainingGoal === "tone") {
+        maintain = 0;
     }
   }
-  if (trainingGoal == "bulk") {
+  if (trainingGoal === "bulk") {
     recommendedWeightChangeText.innerHTML = ("+ " + weightGain);
-  } else if (trainingGoal == "weightloss"){
+  } else if (trainingGoal === "weightloss"){
     recommendedWeightChangeText.innerHTML = ("- " + weightLoss);
+  } else if (trainingGoal === "tone"){
+    recommendedWeightChangeText.innerHTML = (maintain + " maintain current weight by following calculated TDEE.");
   }
 }
 
@@ -271,7 +280,6 @@ function CalorieAvg() {
 
   // output and display average calories
   document.getElementById("AverageCalories").innerText = avgWeight;
-
 
 
 }
