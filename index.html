@@ -39,7 +39,7 @@
       <div class="tooltip">
         <label>Current Weight:</label>
         <div>
-          <input type="number" step="0.1" id="currentWeight" name="currentWeight" oninput="validateFormNumber('currentWeight')">
+          <input type="number" step="0.1" min="0" id="currentWeight" name="currentWeight" oninput="validateFormNumber('currentWeight')">
           <span class="tooltiptext">Please enter a valid number</span>
         </div>
       </div>
@@ -47,7 +47,7 @@
       <div class="tooltip">
         <label>Estimated Body Fat Percentage:</label>
         <div>
-          <input type="number" step="0.1" id="estBodyFatPercent" name="estBodyFatPercent" oninput="validateFormNumber('estBodyFatPercent')">
+          <input type="number" step="0.1" min="0" id="estBodyFatPercent" name="estBodyFatPercent" oninput="validateFormNumber('estBodyFatPercent')">
           <span class="tooltiptext">Please enter a valid number</span>
         </div>
       </div>
@@ -181,13 +181,13 @@
             <tr>
 
                 <td>Weight</td>
-                <td><input type="number" id="SunWeight" oninput="validateFormNumber('SunWeight')"></td>
-                <td><input type="number" id="MonWeight" oninput="validateFormNumber('MonWeight')"></td>
-                <td><input type="number" id="TuesWeight" oninput="validateFormNumber('TuesWeight')"></td>
-                <td><input type="number" id="WedWeight" oninput="validateFormNumber('WedWeight')"></td>
-                <td><input type="number" id="ThursWeight" oninput="validateFormNumber('ThursWeight')"></td>
-                <td><input type="number" id="FriWeight" oninput="validateFormNumber('FriWeight')"></td>
-                <td><input type="number" id="SatWeight" oninput="validateFormNumber('SatWeight')"></td>
+                <td><input type="number" min="0" id="SunWeight" oninput="validateFormNumber('SunWeight')"></td>
+                <td><input type="number" min="0" id="MonWeight" oninput="validateFormNumber('MonWeight')"></td>
+                <td><input type="number" min="0" id="TuesWeight" oninput="validateFormNumber('TuesWeight')"></td>
+                <td><input type="number" min="0" id="WedWeight" oninput="validateFormNumber('WedWeight')"></td>
+                <td><input type="number" min="0" id="ThursWeight" oninput="validateFormNumber('ThursWeight')"></td>
+                <td><input type="number" min="0" id="FriWeight" oninput="validateFormNumber('FriWeight')"></td>
+                <td><input type="number" min="0" id="SatWeight" oninput="validateFormNumber('SatWeight')"></td>
                 <td><input type="button" id="weightButton" value="Calculate"
                 onclick="WeightAvg()"></td>
                 <td id="AverageWeight"></td>
@@ -198,13 +198,14 @@
         <table>
             <tr>
                 <td>Calories</td>
-                <td><input type="number" id="SunCalories" oninput="validateFormNumber('SunCalories')"></td>
-                <td><input type="number" id="MonCalories" oninput="validateFormNumber('MonCalories')"></td>
-                <td><input type="number" id="TuesCalories" oninput="validateFormNumber('TuesCalories')"></td>
-                <td><input type="number" id="WedCalories" oninput="validateFormNumber('WedCalories')"></td>
-                <td><input type="number" id="ThursCalories" oninput="validateFormNumber('ThursCalories')"></td>
-                <td><input type="number" id="FriCalories" oninput="validateFormNumber('FriCalories')"></td>
-                <td><input type="number" id="SatCalories" oninput="validateFormNumber('SatCalories')"></td>
+                <!-- Set min/max value attributes for user safety reasons. Max value is temporary! -->
+                <td><input type="number" min="1500" max="5000" id="SunCalories" oninput="validateFormNumber('SunCalories')"></td>
+                <td><input type="number" min="1500" max="5000" id="MonCalories" oninput="validateFormNumber('MonCalories')"></td>
+                <td><input type="number" min="1500" max="5000" id="TuesCalories" oninput="validateFormNumber('TuesCalories')"></td>
+                <td><input type="number" min="1500" max="5000" id="WedCalories" oninput="validateFormNumber('WedCalories')"></td>
+                <td><input type="number" min="1500" max="5000" id="ThursCalories" oninput="validateFormNumber('ThursCalories')"></td>
+                <td><input type="number" min="1500" max="5000" id="FriCalories" oninput="validateFormNumber('FriCalories')"></td>
+                <td><input type="number" min="1500" max="5000" id="SatCalories" oninput="validateFormNumber('SatCalories')"></td>
                 <td><input type="button" id="calorieButton" value="Calculate"
                     onclick="CalorieAvg()"></td>
                 <td id="AverageCalories"></td>
