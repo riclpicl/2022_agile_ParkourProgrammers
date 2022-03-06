@@ -6,8 +6,6 @@ ul {
   border: 1px solid red;
 }
 
-
-
 /* https://www.w3schools.com/css/tryit.asp?filename=trycss_tooltip_bottom */
 /* Linked code starts here*/
 .tooltip {
@@ -37,7 +35,6 @@ ul {
   pointer-events: none;
 }
 /* Linked code ends here */
-
 
 
 /* Temporary borders */
@@ -145,3 +142,12 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 } 
+
+/* Output box for recommended training phase */
+#recPhase {
+  box-shadow: 0 0 5px 1px #D3D3D3;
+  height: 20px;
+  width: 200px;
+  display: block;
+  padding: .5em;
+}
