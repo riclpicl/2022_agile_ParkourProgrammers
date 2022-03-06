@@ -151,3 +151,10 @@ input:checked + .slider:before {
   display: block;
   padding: .5em;
 }
+#recWeightChangeWeekly {
+  box-shadow: 0 0 5px 1px #D3D3D3;
+  height: 20px;
+  width: 200px;
+  display: block;
+  padding: .5em;
+}
