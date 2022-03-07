@@ -20,7 +20,7 @@
     
     <!--TODO: Connect inputs to calculations and DB-->
     <!--Likely thinking we'll need to have a submit button to commit info to DB but not refresh the page.-->
-    <div class="userInfo">
+    <div class="user-info">
       <div>
         <label>Start Date:</label>
         <div>
@@ -40,7 +40,7 @@
         <label>Current Weight:</label>
         <div>
           <input type="number" step="0.1" min="0" id="currentWeight" name="currentWeight" placeholder="Enter a valid number" oninput="validateFormNumber('currentWeight', 'weightSpan')">
-          <span class="inputSpan" id="weightSpan">Please enter a valid number</span>
+          <span class="input-span" id="weightSpan">Please enter a valid number</span>
         </div>
       </div>
       
@@ -48,7 +48,7 @@
         <label>Estimated Body Fat Percentage:</label>
         <div>
           <input type="number" step="0.1" min="0" id="estBodyFatPercent" name="estBodyFatPercent" placeholder="Enter a valid number" oninput="validateFormNumber('estBodyFatPercent', 'fatSpan')">
-          <span class="inputSpan" id="fatSpan">Please enter a valid number</span>
+          <span class="input-span" id="fatSpan">Please enter a valid number</span>
         </div>
       </div>
         
@@ -63,7 +63,7 @@
       </div>
     </div>
     
-    <div class="weightChangeGoals">
+    <div class="weight-change-goals">
       <div>
         <h2>Calculate Goal Weight Change</h2>
         <input type="radio" id="goalChangeYes" onClick="Disappear()" name="weightChangeGoalsPref" checked>
@@ -73,7 +73,7 @@
         <label>No</label>
       </div>
       
-      <div id="goalCalculatedMenu">
+      <div id="goal-calculated-menu">
         <ol>
         
           <!--TODO: Have selector input values connected to the calulations.-->
@@ -121,7 +121,7 @@
       </div>
       
       <!--TODO: Connect custom phase calculation output here.-->
-      <div id="goalCustomMenu">
+      <div id="goal-custom-menu">
         <ul>
           <li>
             <h4>What Is the Current Goal of Your Training?</h4>
@@ -144,13 +144,13 @@
 
     <div class="TDEE">
       <h2>Your Estimated Total Daily Energy Expenditure and Macronutrient Requirement</h2>
-      <input class="tdeeButton" type="button" id="tdeeButton" value="Calculate" onclick="TDEE()">
-      <p class = "macrosBlock">Your Current TDEE is: <output id="currentTDEE"></output> </p>
-      <p class = "macrosBlock">Your Target Daily Surplus: <output id="dailySurplus"></output></p>
-      <p class = "macrosBlock">Target Daily Calorie Intake: <output id="totalCalories"></output> </p>
-      <p class = "macrosBlock">Protein: <output id="proteinMacro"></output></p>
-      <p class = "macrosBlock">Fat: <output id="fatMacro"></output> </p>
-      <p class = "macrosBlock">Carbs: <output id="carbMacro"></output></p>
+      <input class="tdee-button" type="button" id="tdeeButton" value="Calculate" onclick="TDEE()">
+      <p class = "macros-block">Your Current TDEE is: <output id="currentTDEE"></output> </p>
+      <p class = "macros-block">Your Target Daily Surplus: <output id="dailySurplus"></output></p>
+      <p class = "macros-block">Target Daily Calorie Intake: <output id="totalCalories"></output> </p>
+      <p class = "macros-block">Protein: <output id="proteinMacro"></output></p>
+      <p class = "macros-block">Fat: <output id="fatMacro"></output> </p>
+      <p class = "macros-block">Carbs: <output id="carbMacro"></output></p>
     </div>
 
     <div id="StatsTable">

@@ -2,7 +2,7 @@ ul {
   list-style-type: none;
 }
 
-.inputSpan {
+.input-span {
   display: none;
 }
 
@@ -11,7 +11,9 @@ ul {
 }
 
 /* https://www.w3schools.com/css/tryit.asp?filename=trycss_tooltip_bottom */
-/* Linked code starts here*/
+
+/* Linked code starts here */
+
 .tooltip {
   display: inline-block;
   position: relative;
@@ -25,7 +27,7 @@ ul {
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
-  
+
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
@@ -33,6 +35,7 @@ ul {
   left: 50%;
   margin-left: -60px;
 }
+
 /* Linked code ends here */
 
 /* Temporary borders */
@@ -40,20 +43,20 @@ body {
   border: 1px solid black;
 }
 
-#goalCalculatedMenu {
+#goal-calculated-menu {
   border: 1px solid yellow;
 }
 
-#goalCustomMenu {
+#goal-custom-menu {
   border: 1px solid yellow;
 }
 
-.userInfo {
+.user-info {
   gap: 10px;
   border: 1px solid blue;
 }
 
-.weightChangeGoals {
+.weight-change-goals {
   border: 1px solid red;
 }
 
@@ -62,11 +65,11 @@ body {
 }
 /* Temporary borders */
 
-.macrosBlock {
+.macros-block {
   padding-left: 2.5%;
 }
 
-.tdeeButton {
+.tdee-button {
   margin-left: 2.5%;
 }
 
