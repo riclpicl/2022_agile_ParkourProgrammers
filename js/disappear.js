@@ -12,12 +12,12 @@ function Disappear() {
   
   
   //Since the function switches, it must show the intended description and hide the alternatives with every selection.
-  if (document.getElementById('experience').value == 'beginner') {
+  if (document.getElementById('experience').value === 'beginner') {
     $('#beginnerDesc').show();
     $('#intermediateDesc').hide();
     $('#expertDesc').hide();
     
-  } else if (document.getElementById('experience').value == 'intermediate') {
+  } else if (document.getElementById('experience').value === 'intermediate') {
     $('#intermediateDesc').show();
     $('#beginnerDesc').hide();
     $('#expertDesc').hide();

@@ -39,16 +39,16 @@
       <div class="tooltip">
         <label>Current Weight:</label>
         <div>
-          <input type="number" step="0.1" min="0" id="currentWeight" name="currentWeight" oninput="validateFormNumber('currentWeight')">
-          <span class="tooltiptext">Please enter a valid number</span>
+          <input type="number" step="0.1" min="0" id="currentWeight" name="currentWeight" placeholder="Enter a valid number" oninput="validateFormNumber('currentWeight', 'weightSpan')">
+          <span class="inputSpan" id="weightSpan">Please enter a valid number</span>
         </div>
       </div>
       
       <div class="tooltip">
         <label>Estimated Body Fat Percentage:</label>
         <div>
-          <input type="number" step="0.1" min="0" id="estBodyFatPercent" name="estBodyFatPercent" oninput="validateFormNumber('estBodyFatPercent')">
-          <span class="tooltiptext">Please enter a valid number</span>
+          <input type="number" step="0.1" min="0" id="estBodyFatPercent" name="estBodyFatPercent" placeholder="Enter a valid number" oninput="validateFormNumber('estBodyFatPercent', 'fatSpan')">
+          <span id="fatSpan">Please enter a valid number</span>
         </div>
       </div>
         

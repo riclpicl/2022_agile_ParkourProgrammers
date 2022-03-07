@@ -2,6 +2,10 @@ ul {
   list-style-type: none;
 }
 
+.inputSpan {
+  display: none;
+}
+
 .error {
   border: 1px solid red;
 }
@@ -29,13 +33,7 @@ ul {
   left: 50%;
   margin-left: -60px;
 }
-
-.tooltip:hover .tooltiptext {
-  opacity: 0;
-  pointer-events: none;
-}
 /* Linked code ends here */
-
 
 /* Temporary borders */
 body {
@@ -62,6 +60,7 @@ body {
 .TDEE {
   border: 1px solid green;
 }
+/* Temporary borders */
 
 .macrosBlock {
   padding-left: 2.5%;
