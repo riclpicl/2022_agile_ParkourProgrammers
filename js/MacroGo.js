@@ -140,22 +140,13 @@ function TDEE() {
 
   fatRequirement = Math.round((totalDailyCalories * 0.3) / 9);
 
-  //Empty the paragraph tags each time button is pressed
-
-  document.getElementById("currentTDEE").removeChild(document.getElementById("currentTDEE").lastChild);
-  document.getElementById("dailySurplus").removeChild(document.getElementById("dailySurplus").lastChild);
-  document.getElementById("totalCalories").removeChild(document.getElementById("totalCalories").lastChild);
-  document.getElementById("protienMacro").removeChild(document.getElementById("protienMacro").lastChild);
-  document.getElementById("fatMacro").removeChild(document.getElementById("fatMacro").lastChild);
-  document.getElementById("carbMacro").removeChild(document.getElementById("carbMacro").lastChild);
-
   //Polulate with current information
-  document.getElementById("currentTDEE").innerHTML += ("Your Current TDEE is: " + TDEE + " calories");
-  document.getElementById("dailySurplus").innerHTML += ("Your Target Daily Surplus: " + surplusCalories + " calories");
-  document.getElementById("totalCalories").innerHTML += ("Target Daily Calorie Intake: " + totalDailyCalories + " calories");
-  document.getElementById("protienMacro").innerHTML += ("Protein: " + proteinRequirement + " grams");
-  document.getElementById("fatMacro").innerHTML += ("Fat: " + fatRequirement + " grams");
-  document.getElementById("carbMacro").innerHTML += ("Carbs: " + carbRequirement + " grams");
+  document.getElementById("currentTDEE").innerText = (TDEE + " calories");
+  document.getElementById("dailySurplus").innerText = (surplusCalories + " calories");
+  document.getElementById("totalCalories").innerText = (totalDailyCalories + " calories");
+  document.getElementById("proteinMacro").innerText = (proteinRequirement + " grams");
+  document.getElementById("fatMacro").innerText = (fatRequirement + " grams");
+  document.getElementById("carbMacro").innerText = (carbRequirement + " grams");
 
 }
 
