@@ -1,12 +1,12 @@
 function Disappear() {
   //Since the function toggles, it must show the intended window and hide the alternative on every radio switch.
   if (document.getElementById('goalChangeYes').checked) {
-    $('#goalCalculatedMenu').show();
-    $('#goalCustomMenu').hide();
+    $('#goal-calculated-menu').show();
+    $('#goal-custom-menu').hide();
     
   } else { 
-    $('#goalCalculatedMenu').hide();
-    $('#goalCustomMenu').show();
+    $('#goal-calculated-menu').hide();
+    $('#goal-custom-menu').show();
   }
   
   
