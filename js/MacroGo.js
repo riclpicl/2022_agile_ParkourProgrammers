@@ -251,8 +251,6 @@ function WeightAvg() {
 
   // display and output average weight
   document.getElementById("AverageWeight").innerText = avgWeight;
-
-
 }
 
 
@@ -271,6 +269,4 @@ function CalorieAvg() {
 
   // output and display average calories
   document.getElementById("AverageCalories").innerText = avgWeight;
-
-
 }
