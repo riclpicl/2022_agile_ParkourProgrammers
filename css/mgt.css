@@ -60,9 +60,11 @@ body {
   border: 1px solid red;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .TDEE {
   border: 1px solid green;
 }
+
 /* Temporary borders */
 
 .macros-block {
@@ -106,11 +108,12 @@ label p {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.slider:before {
+.slider::before {
   position: absolute;
   content: "";
   height: 26px;
@@ -118,8 +121,9 @@ label p {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
@@ -130,42 +134,53 @@ input:focus + .slider {
   box-shadow: 0 0 1px #6456f3;
 }
 
-input:checked + .slider:before {
+input:checked + .slider::before {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-transform: translateX(26px);
+  /* stylelint-disable-next-line property-no-vendor-prefix */
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
 /* Rounded sliders */
-.slider.round {
+.slider-round {
   border-radius: 34px;
 }
 
-.slider.round:before {
+.slider-round::before {
   border-radius: 50%;
-} 
+}
 
 /* Output box for recommended training phase */
+/* stylelint-disable-next-line selector-id-pattern */
 #recPhase {
-  box-shadow: 0 0 5px 1px #D3D3D3;
+  box-shadow: 0 0 5px 1px #d3d3d3;
   height: 20px;
   width: 200px;
   display: block;
-  padding: .5em;
+  padding: 0.5em;
 }
+
+/* stylelint-disable-next-line selector-id-pattern */
 #recWeightChangeWeekly {
-  box-shadow: 0 0 5px 1px #D3D3D3;
+  box-shadow: 0 0 5px 1px #d3d3d3;
   height: 20px;
   width: 200px;
   display: block;
-  padding: .5em;
+  padding: 0.5em;
 }
 
 /* Output boxes for TDEE and macro recommendations */
-#currentTDEE, #dailySurplus, #totalCalories, #proteinMacro, #fatMacro, #carbMacro {
-  box-shadow: 0 0 5px 1px #D3D3D3;
+/* stylelint-disable selector-id-pattern */
+#currentTDEE,
+#dailySurplus,
+#totalCalories,
+#proteinMacro,
+#fatMacro,
+#carbMacro { /* stylelint-enable selector-id-pattern */
+  box-shadow: 0 0 5px 1px #d3d3d3;
   height: 20px;
   width: 200px;
   display: block;
-  padding: .5em;
+  padding: 0.5em;
 }
