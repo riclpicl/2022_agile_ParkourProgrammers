@@ -15,5 +15,3 @@ function validateFormNumber(numToVal, fetchSpanId) {
     $(spanId).show();
   }
 }
-
-window.onload = $(spanId).hide();

@@ -267,6 +267,7 @@ function CalorieAvg() {
   //average calorie intake over 7 days
   var avgWeight = (num1 + num2 + num3 + num4 + num5 + num6 + num7) / 7;
 
+console.log(num1);
   // output and display average calories
   document.getElementById("AverageCalories").innerText = avgWeight;
 }
