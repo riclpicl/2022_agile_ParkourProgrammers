@@ -1,19 +1,19 @@
-function validateFormNumber(numToVal) {
+function validateFormNumber(numToVal, fetchSpanId) {
   
   var elementId = document.getElementById(numToVal);
+  var spanId = document.getElementById(fetchSpanId);
   
   //https://stackoverflow.com/a/12643073
-  var isValid = new RegExp(/^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$/).test(parseFloat(elementId.value));
-  if (isValid) {
+  if (new RegExp(/^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$/).test(parseFloat(elementId.value))) {
     elementId.classList.remove("error");
-    $(".tooltiptext").css("visibility", "hidden");
+    spanId.classList.remove("tooltiptext");
+    $(spanId).hide();
     
   } else {
-    //Resets number input if invalid character is entered.
-    document.getElementById(numToVal).value = "";
     elementId.classList.add("error");
-    $(".tooltiptext").css("visibility", "visible");
+    spanId.classList.add("tooltiptext");
+    $(spanId).show();
   }
 }
 
-window.onload = $(".tooltiptext").css("visibility", "hidden");
+window.onload = $(spanId).hide();

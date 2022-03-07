@@ -187,12 +187,12 @@ function GoalWeightChange() {
       if (trainingExperience === "beginner") {
         if (bodyFat < 30) {
           weightGain = Math.round(weight * 0.01) / 4;
+          }
         } else if (trainingExperience === "intermediate") {
           weightGain = Math.round(weight * 0.015) / 4;
         } else if (trainingExperience === "expert") {
           weightGain = Math.round(weight * 0.025) / 4;
         }
-      }
     } else if (trainingGoal === "weightloss") {
       if (bodyFat > 40) {
         weightLoss = Math.round(weight * 0.01) / 4;
@@ -209,12 +209,12 @@ function GoalWeightChange() {
       if (trainingExperience === "beginner") {        
         if (bodyFat < 20) {
           weightGain = Math.round(weight * 0.01) / 4;
+          }
         } else if (trainingExperience === "intermediate") {
           weightGain = Math.round(weight * 0.05) / 4;
         } else if (trainingExperience === "expert") {
           weightGain = Math.round(weight * 0.025) / 4;
         }
-      }
     } else if (trainingGoal === "weightloss") {
       if (bodyFat > 30) {
         weightLoss = Math.round(weight * 0.01) / 4;
