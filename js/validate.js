@@ -1,5 +1,5 @@
 function validateFormNumber(numToVal, fetchSpanId) {
-  
+ 
   var elementId = document.getElementById(numToVal);
   var spanId = document.getElementById(fetchSpanId);
   
