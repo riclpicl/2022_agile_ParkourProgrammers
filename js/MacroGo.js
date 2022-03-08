@@ -18,53 +18,53 @@ function TDEE() {
   var NEAT = 150;
   var TDEE = Math.round(BMR + TEF + EEE + NEAT);
 
-  if (sex == "female") {
-    if (trainingExperience == "beginner") {
-      if (trainingGoal == "bulk") {
+  if (sex === "female") {
+    if (trainingExperience === "beginner") {
+      if (trainingGoal === "bulk") {
         totalDailyCalories = weight * 17;
-      } else if (trainingGoal == "tone") {
+      } else if (trainingGoal === "tone") {
         totalDailyCalories = weight * 13;
       } else {
         totalDailyCalories = weight * 11;
       }
-    } else if (trainingExperience == "intermediate") {
-      if (trainingGoal == "bulk") {
+    } else if (trainingExperience === "intermediate") {
+      if (trainingGoal === "bulk") {
         totalDailyCalories = weight * 19;
-      } else if (trainingGoal == "tone") {
+      } else if (trainingGoal === "tone") {
         totalDailyCalories = weight * 15;
       } else {
         totalDailyCalories = weight * 13;
       }
     } else {
-      if (trainingGoal == "bulk") {
+      if (trainingGoal === "bulk") {
         totalDailyCalories = weight * 21;
-      } else if (trainingGoal == "tone") {
+      } else if (trainingGoal === "tone") {
         totalDailyCalories = weight * 17;
       } else {
         totalDailyCalories = weight * 15;
       }
     }
-  } else if (sex == "male") {
-    if (trainingExperience == "beginner") {
-      if (trainingGoal == "bulk") {
+  } else if (sex === "male") {
+    if (trainingExperience === "beginner") {
+      if (trainingGoal === "bulk") {
         totalDailyCalories = weight * 18;
-      } else if (trainingGoal == "tone") {
+      } else if (trainingGoal === "tone") {
         totalDailyCalories = weight * 14;
       } else {
         totalDailyCalories = weight * 12;
       }
-    } else if (trainingExperience == "intermediate") {
-      if (trainingGoal == "bulk") {
+    } else if (trainingExperience === "intermediate") {
+      if (trainingGoal === "bulk") {
         totalDailyCalories = weight * 20;
-      } else if (trainingGoal == "tone") {
+      } else if (trainingGoal === "tone") {
         totalDailyCalories = weight * 16;
       } else {
         totalDailyCalories = weight * 14;
       }
     } else {
-      if (trainingGoal == "bulk") {
+      if (trainingGoal === "bulk") {
         totalDailyCalories = weight * 22;
-      } else if (trainingGoal == "tone") {
+      } else if (trainingGoal === "tone") {
         totalDailyCalories = weight * 18;
       } else {
         totalDailyCalories = weight * 16;
@@ -74,14 +74,14 @@ function TDEE() {
   }
   surplusCalories = Math.round(totalDailyCalories - TDEE);
 
-  if (trainingExperience == "beginner") {
-    if (trainingGoal == "bulk") {
+  if (trainingExperience === "beginner") {
+    if (trainingGoal === "bulk") {
       if (bodyFat < 15) {
         proteinRequirement = Math.round(weight * 1.1);
       } else {
         proteinRequirement = Math.round(weight * 0.8);
       }
-    } else if (trainingGoal == "tone") {
+    } else if (trainingGoal === "tone") {
       if (bodyFat < 15) {
         proteinRequirement = Math.round(weight * 0.9);
       } else {
@@ -94,14 +94,14 @@ function TDEE() {
         proteinRequirement = Math.round(weight * 0.7);
       }
     }
-  } else if (trainingExperience == "intermediate") {
-    if (trainingGoal == "bulk") {
+  } else if (trainingExperience === "intermediate") {
+    if (trainingGoal === "bulk") {
       if (bodyFat < 15) {
         proteinRequirement = Math.round(weight * 1.2);
       } else {
         proteinRequirement = Math.round(weight * 0.9);
       }
-    } else if (trainingGoal == "tone") {
+    } else if (trainingGoal === "tone") {
       if (bodyFat < 15) {
         proteinRequirement = Math.round(weight * 1.0);
       } else {
@@ -115,13 +115,13 @@ function TDEE() {
       }
     }
   } else {
-    if (trainingGoal == "bulk") {
+    if (trainingGoal === "bulk") {
       if (bodyFat < 15) {
         proteinRequirement = Math.round(weight * 1.3);
       } else {
         proteinRequirement = Math.round(weight * 1.0);
       }
-    } else if (trainingGoal == "tone") {
+    } else if (trainingGoal === "tone") {
       if (bodyFat < 15) {
         proteinRequirement = Math.round(weight * 1.1);
       } else {
@@ -159,9 +159,9 @@ function trainingPhaseRec() {
   var WeightLoss = "Weightloss Phase";
 
 
-  if (bodyFat >= 22 && sex == "female" || bodyFat >= 18 && sex == "male") {
+  if (bodyFat >= 22 && sex === "female" || bodyFat >= 18 && sex === "male") {
     document.getElementById("recPhase").innerText = WeightLoss;
-  } else if (bodyFat <= 16 && sex == "female" || bodyFat <= 6 && sex == "male") {
+  } else if (bodyFat <= 16 && sex === "female" || bodyFat <= 6 && sex === "male") {
     document.getElementById("recPhase").innerText = Bulk;
   } else {
     document.getElementById("recPhase").innerText = Tone;

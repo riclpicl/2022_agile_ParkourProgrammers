@@ -115,6 +115,10 @@ label p {
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 34px;
+  font-family: Tahoma, sans-serif;
+  font-size: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .slider::before {
