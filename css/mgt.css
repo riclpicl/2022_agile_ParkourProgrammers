@@ -54,15 +54,18 @@ body {
 .user-info {
   gap: 10px;
   border: 1px solid blue;
+  padding: 20px;
 }
 
 .weight-change-goals {
   border: 1px solid red;
+  padding: 20px;
 }
 
 /* stylelint-disable-next-line selector-class-pattern */
 .TDEE {
   border: 1px solid green;
+  padding: 20px;
 }
 
 /* Temporary borders */
@@ -76,7 +79,7 @@ body {
 }
 
 label p {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: Tahoma, sans-serif;
   font-size: 10px;
   padding-left: 10px;
 }
@@ -129,11 +132,11 @@ label p {
 }
 
 input:checked + .slider {
-  background-color: #6456f3;
+  background-color: #7e90f1;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #6456f3;
+  box-shadow: 0 0 1px #7e90f1;
 }
 
 input:checked + .slider::before {
