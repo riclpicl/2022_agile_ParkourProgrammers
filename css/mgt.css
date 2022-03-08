@@ -54,15 +54,18 @@ body {
 .user-info {
   gap: 10px;
   border: 1px solid blue;
+  padding: 20px;
 }
 
 .weight-change-goals {
   border: 1px solid red;
+  padding: 20px;
 }
 
 /* stylelint-disable-next-line selector-class-pattern */
 .TDEE {
   border: 1px solid green;
+  padding: 20px;
 }
 
 /* Temporary borders */
