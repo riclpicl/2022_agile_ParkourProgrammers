@@ -185,6 +185,7 @@ function GoalWeightChange() {
   if (sex === "female") {
     if (trainingGoal === "bulk") {
       if (trainingExperience === "beginner") {
+        //TODO: Proper if/else logic
         if (bodyFat < 30) {
           weightGain = Math.round(weight * 0.01) / 4;
           }
@@ -209,7 +210,10 @@ function GoalWeightChange() {
       if (trainingExperience === "beginner") {        
         if (bodyFat < 20) {
           weightGain = Math.round(weight * 0.01) / 4;
-          }
+          } else {
+              //TODO: Proper if/else logic
+              weightGain = "Uh oh, broke";
+            }
         } else if (trainingExperience === "intermediate") {
           weightGain = Math.round(weight * 0.05) / 4;
         } else if (trainingExperience === "expert") {
@@ -238,13 +242,13 @@ function GoalWeightChange() {
 
 function WeightAvg() {
   // take user input and convert to integer
-  var num1 = parseInt(document.getElementById("SunWeight").value);
-  var num2 = parseInt(document.getElementById("MonWeight").value);
-  var num3 = parseInt(document.getElementById("TuesWeight").value);
-  var num4 = parseInt(document.getElementById("WedWeight").value);
-  var num5 = parseInt(document.getElementById("ThursWeight").value);
-  var num6 = parseInt(document.getElementById("FriWeight").value);
-  var num7 = parseInt(document.getElementById("SatWeight").value);
+  var num1 = Number(document.getElementById("SunWeight").value);
+  var num2 = Number(document.getElementById("MonWeight").value);
+  var num3 = Number(document.getElementById("TuesWeight").value);
+  var num4 = Number(document.getElementById("WedWeight").value);
+  var num5 = Number(document.getElementById("ThursWeight").value);
+  var num6 = Number(document.getElementById("FriWeight").value);
+  var num7 = Number(document.getElementById("SatWeight").value);
 
   //average weight over 7 days
   var avgWeight = (num1 + num2 + num3 + num4 + num5 + num6 + num7) / 7;
@@ -256,13 +260,13 @@ function WeightAvg() {
 
 function CalorieAvg() {
   // take user calorie input and convert to integer
-  var num1 = parseInt(document.getElementById("SunCalories").value);
-  var num2 = parseInt(document.getElementById("MonCalories").value);
-  var num3 = parseInt(document.getElementById("TuesCalories").value);
-  var num4 = parseInt(document.getElementById("WedCalories").value);
-  var num5 = parseInt(document.getElementById("ThursCalories").value);
-  var num6 = parseInt(document.getElementById("FriCalories").value);
-  var num7 = parseInt(document.getElementById("SatCalories").value);
+  var num1 = Number(document.getElementById("SunCalories").value);
+  var num2 = Number(document.getElementById("MonCalories").value);
+  var num3 = Number(document.getElementById("TuesCalories").value);
+  var num4 = Number(document.getElementById("WedCalories").value);
+  var num5 = Number(document.getElementById("ThursCalories").value);
+  var num6 = Number(document.getElementById("FriCalories").value);
+  var num7 = Number(document.getElementById("SatCalories").value);
 
   //average calorie intake over 7 days
   var avgWeight = (num1 + num2 + num3 + num4 + num5 + num6 + num7) / 7;
