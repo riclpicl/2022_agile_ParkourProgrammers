@@ -1,6 +1,6 @@
 function TDEE() {
   var weight = document.getElementById("currentWeight").value;
-  var weightKgs = weight * 0.453592;
+  var lbs_kgs = document.getElementById("Lbs_Kgs");
   var bodyFat = document.getElementById("estBodyFatPercent").value;
   var trainingExperience = document.getElementById("experience").value;
   var trainingGoal = document.getElementById("currentGoal").value;
@@ -11,13 +11,20 @@ function TDEE() {
   var proteinRequirement;
   var carbRequirement;
   var fatRequirement;
+  
+  
+  if (lbs_kgs.checked) {
+    console.log("checked");
+    weight = weight / 0.453592;
+  }
 
-  var BMR = weightKgs * 20;
+  var BMR = (weight * 0.453592) * 20;
   var TEF = BMR * 0.1;
   var EEE = 150;
   var NEAT = 150;
   var TDEE = Math.round(BMR + TEF + EEE + NEAT);
 
+// total daily calories section
   if (sex === "female") {
     if (trainingExperience === "beginner") {
       if (trainingGoal === "bulk") {
@@ -74,6 +81,7 @@ function TDEE() {
   }
   surplusCalories = Math.round(totalDailyCalories - TDEE);
 
+//Macro Requirement section. Protien requirements are based on exercise experience, training goal, as well as body fat percentage
   if (trainingExperience === "beginner") {
     if (trainingGoal === "bulk") {
       if (bodyFat < 15) {
@@ -135,15 +143,22 @@ function TDEE() {
       }
     }
   }
+  
+   // Fat and Carb Requirements based on how many calories of protein are consumed
+  var fatAndCarbCalories = totalDailyCalories - (proteinRequirement * 4);
+  var proteinCalories = totalDailyCalories - fatAndCarbCalories;
+  var proteinPercentage = proteinCalories/totalDailyCalories;
+  var fatAndCarbPercentage = 100 - proteinPercentage;
+  var fatAndCarbPercentage = 1 - proteinPercentage;
 
-  carbRequirement = Math.round((totalDailyCalories * 0.4) / 4);
-
-  fatRequirement = Math.round((totalDailyCalories * 0.3) / 9);
+  carbRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.6)) / 4);
+  
+ fatRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.4)) / 9);
 
   //Polulate with current information
   document.getElementById("currentTDEE").innerText = (TDEE + " calories");
   document.getElementById("dailySurplus").innerText = (surplusCalories + " calories");
-  document.getElementById("totalCalories").innerText = (totalDailyCalories + " calories");
+  document.getElementById("totalCalories").innerText = (Math.round(totalDailyCalories) + " calories");
   document.getElementById("proteinMacro").innerText = (proteinRequirement + " grams");
   document.getElementById("fatMacro").innerText = (fatRequirement + " grams");
   document.getElementById("carbMacro").innerText = (carbRequirement + " grams");
