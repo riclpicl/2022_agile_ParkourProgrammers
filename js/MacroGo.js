@@ -13,12 +13,13 @@ function TDEE() {
   var fatRequirement;
   
   
-  if (lbs_kgs.checked) {
-    console.log("checked");
+  if (!lbs_kgs.checked) {
+    // if it is not checked it weight should be converted to pounds
     weight = weight / 0.453592;
   }
 
   var BMR = (weight * 0.453592) * 20;
+  console.log("BMR" + BMR);
   var TEF = BMR * 0.1;
   var EEE = 150;
   var NEAT = 150;

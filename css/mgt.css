@@ -40,35 +40,24 @@ ul {
 
 /* Temporary borders */
 body {
-  border: 1px solid black;
-}
-
-#goal-calculated-menu {
-  border: 1px solid yellow;
-}
-
-#goal-custom-menu {
-  border: 1px solid yellow;
+  margin: 10px;
+  padding: 10px;
+  background-color: #59c7d5;
 }
 
 .user-info {
   gap: 10px;
-  border: 1px solid blue;
   padding: 20px;
 }
 
 .weight-change-goals {
-  border: 1px solid red;
   padding: 20px;
 }
 
 /* stylelint-disable-next-line selector-class-pattern */
 .TDEE {
-  border: 1px solid green;
   padding: 20px;
 }
-
-/* Temporary borders */
 
 .macros-block {
   padding-left: 2.5%;
@@ -136,11 +125,11 @@ label p {
 }
 
 input:checked + .slider {
-  background-color: #7e90f1;
+  background-color: #5997d5;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #7e90f1;
+  box-shadow: 0 0 1px #5997d5;
 }
 
 input:checked + .slider::before {
@@ -183,4 +172,19 @@ input:checked + .slider::before {
   width: 200px;
   display: block;
   padding: 0.5em;
+}
+
+.table {
+  border: 1px solid;
+  width: 70%;
+}
+
+.table th, .table td {
+  border: 1px solid;
+}
+
+
+.table input {
+  border: 1px solid;
+  width: 90%;
 }
