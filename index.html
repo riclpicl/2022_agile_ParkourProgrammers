@@ -35,52 +35,68 @@
     
     <!--TODO: Connect inputs to calculations and DB-->
     <!-- Likely thinking we'll need to have a submit button to commit info to DB but not refresh the page. -->
-    <div class="user-info">
-      <div>
-        <label>Start Date:</label>
+    <div class="container">
+      <div class="user-info">
         <div>
-          <input type="date" id="startDate" name="startDate">
+          <label>Start Date:</label>
+          <div>
+            <input type="date" id="startDate" name="startDate">
+          </div>
+        </div>
+        
+        <div class="toggle">
+          <label class="switch">
+            <input type="checkbox" id="Lbs_Kgs" name="Lbs_Kgs">
+            <span class="slider">
+             Lbs &nbsp; Kgs
+             </span>
+          </label>
+          
+        </div>
+       
+        <div class="tooltip">
+          <label>Current Weight:</label>
+          <div>
+            <input type="number" step="0.1" min="0" id="currentWeight" name="currentWeight" placeholder="Enter a valid number" oninput="validateFormNumber('currentWeight', 'weightSpan')">
+            <!-- TODO: Add proper placeholder text. -->
+            <span class="input-span" id="weightSpan">Please enter a valid number</span>
+          </div>
+        </div>
+        
+        <div class="tooltip">
+          <label>Estimated Body Fat Percentage:</label>
+          <div>
+            <input type="number" step="0.1" min="0" id="estBodyFatPercent" name="estBodyFatPercent" placeholder="Enter a valid number" oninput="validateFormNumber('estBodyFatPercent', 'fatSpan')">
+            <!-- TODO: Add proper placeholder text. -->
+            <span class="input-span" id="fatSpan">Please enter a valid number</span>
+          </div>
+        </div>
+          
+        <div>
+          <label>Sex:</label>
+          <div>
+            <select name="userSex" id="userSex">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
         </div>
       </div>
       
-      <div class="toggle">
-        <label class="switch">
-          <input type="checkbox" id="Lbs_Kgs" name="Lbs_Kgs">
-          <span class="slider">
-           Lbs &nbsp; Kgs
-           </span>
-        </label>
-        
-      </div>
-     
-      <div class="tooltip">
-        <label>Current Weight:</label>
-        <div>
-          <input type="number" step="0.1" min="0" id="currentWeight" name="currentWeight" placeholder="Enter a valid number" oninput="validateFormNumber('currentWeight', 'weightSpan')">
-          <!-- TODO: Add proper placeholder text. -->
-          <span class="input-span" id="weightSpan">Please enter a valid number</span>
+      <div class="TDEE">
+          <h2>Your Estimated Total Daily Energy Expenditure and Macronutrient Requirement</h2>
+          <div class="calories">
+            <p class = "macros-block">Your Current TDEE is: <output id="currentTDEE"></output> </p>
+            <p class = "macros-block">Your Target Daily Surplus: <output id="dailySurplus"></output></p>
+            <p class = "macros-block">Target Daily Calorie Intake: <output id="totalCalories"></output> </p>
+          </div>
+          <div class="nutrients">
+            <p class = "macros-block">Protein: <output id="proteinMacro"></output></p>
+            <p class = "macros-block">Fat: <output id="fatMacro"></output> </p>
+            <p class = "macros-block">Carbs: <output id="carbMacro"></output></p>
+          </div>
         </div>
       </div>
-      
-      <div class="tooltip">
-        <label>Estimated Body Fat Percentage:</label>
-        <div>
-          <input type="number" step="0.1" min="0" id="estBodyFatPercent" name="estBodyFatPercent" placeholder="Enter a valid number" oninput="validateFormNumber('estBodyFatPercent', 'fatSpan')">
-          <!-- TODO: Add proper placeholder text. -->
-          <span class="input-span" id="fatSpan">Please enter a valid number</span>
-        </div>
-      </div>
-        
-      <div>
-        <label>Sex:</label>
-        <div>
-          <select name="userSex" id="userSex">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </div>
-      </div>
-    </div>
     
     <div class="weight-change-goals">
       <div>
@@ -96,32 +112,34 @@
         <ol>
         
           <!--TODO: Have selector input values connected to the calulations.-->
-          <li>
-            <h4>What Is Your Level of Training Experience?</h4>
-              <select name="experience" id="experience">
-                <option value="beginner" onClick="Disappear()">Beginner</option>
-                <option value="intermediate" onClick="Disappear()">Intermediate</option>
-                <option value="expert" onClick="Disappear()">Expert</option>
+          <div class="weight-change-container">
+            <li>
+              <h4>What Is Your Level of Training Experience?</h4>
+                <select name="experience" id="experience">
+                  <option value="beginner" onClick="Disappear()">Beginner</option>
+                  <option value="intermediate" onClick="Disappear()">Intermediate</option>
+                  <option value="expert" onClick="Disappear()">Expert</option>
+                  <!-- <option value=""></option> -->
+                </select>
+                
+                <ul>
+                  <li id="beginnerDesc">Beginner - Less than 1 year of <em>consistent</em> training/dieting.</li>
+                  <li id="intermediateDesc">Intermediate - Approximately 1 year of <em>consistent</em> training/dieting.</li>
+                  <li id="expertDesc">Expert - Several years of <em>consistent</em> training/dieting.</li>
+                </ul>
+            </li>
+            
+            <!--TODO: Have selector input values connected to the calulations.-->
+            <li>
+              <h4>What Is the Current Goal of Your Training?</h4>
+              <select name="currentGoal" id="currentGoal">
+                <option value="bulk">Bulking</option>
+                <option value="tone">Toning</option>
+                <option value="weightloss">Weightloss</option>
                 <!-- <option value=""></option> -->
               </select>
-              
-              <ul>
-                <li id="beginnerDesc">Beginner - Less than 1 year of <em>consistent</em> training/dieting.</li>
-                <li id="intermediateDesc">Intermediate - Approximately 1 year of <em>consistent</em> training/dieting.</li>
-                <li id="expertDesc">Expert - Several years of <em>consistent</em> training/dieting.</li>
-              </ul>
-          </li>
-          
-          <!--TODO: Have selector input values connected to the calulations.-->
-          <li>
-            <h4>What Is the Current Goal of Your Training?</h4>
-            <select name="currentGoal" id="currentGoal">
-              <option value="bulk">Bulking</option>
-              <option value="tone">Toning</option>
-              <option value="weightloss">Weightloss</option>
-              <!-- <option value=""></option> -->
-            </select>
-          </li>
+            </li>
+          </div>
           
           <!--TODO: Connect recommended phase calculation output here.-->
           <li>
@@ -155,16 +173,6 @@
           </li>
         </ul>
       </div>
-    </div>
-
-    <div class="TDEE">
-      <h2>Your Estimated Total Daily Energy Expenditure and Macronutrient Requirement</h2>
-      <p class = "macros-block">Your Current TDEE is: <output id="currentTDEE"></output> </p>
-      <p class = "macros-block">Your Target Daily Surplus: <output id="dailySurplus"></output></p>
-      <p class = "macros-block">Target Daily Calorie Intake: <output id="totalCalories"></output> </p>
-      <p class = "macros-block">Protein: <output id="proteinMacro"></output></p>
-      <p class = "macros-block">Fat: <output id="fatMacro"></output> </p>
-      <p class = "macros-block">Carbs: <output id="carbMacro"></output></p>
     </div>
 
     <div id="StatsTable">

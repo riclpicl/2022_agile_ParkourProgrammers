@@ -49,6 +49,10 @@ body {
   background-color: #90C2E7;
 }
 
+.container {
+  display: flex;
+}
+
 .user-info {
   gap: 10px;
   padding: 20px;
@@ -59,8 +63,13 @@ body {
 }
 
 /* stylelint-disable-next-line selector-class-pattern */
-.TDEE {
-  padding: 20px;
+
+.calories {
+  display: flex;
+}
+
+.nutrients {
+  display: flex;
 }
 
 .macros-block {
@@ -129,11 +138,11 @@ label p {
 }
 
 input:checked + .slider {
-  background-color: #90C2E7;
+  background-color: #4E8098;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #90C2E7;
+  box-shadow: 0 0 1px #4E8098;
 }
 
 input:checked + .slider::before {
@@ -161,6 +170,14 @@ input:checked + .slider::before {
   width: 200px;
   display: block;
   padding: 0.5em;
+}
+
+#goal-calculated-menu ol{
+  display: flex;
+}
+
+.weight-change-container {
+  margin-right: 30px;
 }
 
 /* Output boxes for TDEE and macro recommendations */
@@ -194,7 +211,7 @@ input:checked + .slider::before {
 
 
 /* Navigation Styling*/
-li {
+nav li {
   list-style-type: none;
   /* First value is top and bottom side, second value is left and right side*/
   margin: 0 2vw;
