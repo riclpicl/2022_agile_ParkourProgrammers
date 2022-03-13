@@ -1,5 +1,9 @@
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* This option by default dispose the elements in a row*/
+  display: flex;
 }
 
 .input-span {
@@ -42,7 +46,7 @@ ul {
 body {
   margin: 10px;
   padding: 10px;
-  background-color: #59c7d5;
+  background-color: #90C2E7;
 }
 
 .user-info {
@@ -125,11 +129,11 @@ label p {
 }
 
 input:checked + .slider {
-  background-color: #5997d5;
+  background-color: #90C2E7;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #5997d5;
+  box-shadow: 0 0 1px #90C2E7;
 }
 
 input:checked + .slider::before {
@@ -183,8 +187,67 @@ input:checked + .slider::before {
   border: 1px solid;
 }
 
-
 .table input {
   border: 1px solid;
   width: 90%;
+}
+
+
+/* Navigation Styling*/
+li {
+  list-style-type: none;
+  /* First value is top and bottom side, second value is left and right side*/
+  margin: 0 2vw;
+  /* Font sizze will be 3% of the height of the viewport */
+  font-size: 3vh;
+}
+
+a {
+  text-decoration: none;
+  color: #092327;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a:hover {
+  background-color: #00A9A5;
+}
+
+nav {
+  width: 100vw;
+  background-color: #4E8098;
+}
+
+button {
+  display: none;
+}
+
+/* Change the layout of the navigation bar for all the screens that have a width less or equal than 500px */
+@media only screen and (max-width: 500px){
+
+  button {
+    /* Makes the button visible */
+    display: block;
+    padding: 2vw;
+    font-size: 3vh;
+    background-color: #4E8098;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    align-self: flex-start;
+
+  }
+  /* shows elements in a column */
+  ul {
+    flex-direction: column;
+  }
+
+  /* Deletes margin on top or bottom of the tag */
+  li {
+    margin: 0;
+  }
+
+  /* Makes sure that the a tag will take the entire screen */
+  a {
+    display: block;
+  }
 }
