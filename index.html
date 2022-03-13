@@ -57,7 +57,7 @@
         <div class="tooltip">
           <label>Current Weight:</label>
           <div>
-            <input type="number" step="0.1" min="0" id="currentWeight" name="currentWeight" placeholder="Enter a valid number" oninput="validateFormNumber('currentWeight', 'weightSpan')" onkeyup="TDEE()">
+            <input type="number" step="0.1" min="0" id="currentWeight" name="currentWeight" placeholder="Enter a valid number" oninput="validateFormNumber('currentWeight', 'weightSpan')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
             <!-- TODO: Add proper placeholder text. -->
             <span class="input-span" id="weightSpan">Please enter a valid number</span>
           </div>
