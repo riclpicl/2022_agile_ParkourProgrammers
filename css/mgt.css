@@ -180,6 +180,15 @@ input:checked + .slider::before {
   margin-right: 30px;
 }
 
+/* stylelint-enable selector-id-pattern */
+#customPhase { 
+  box-shadow: 0 0 5px 1px #d3d3d3;
+  height: 30px;
+  width: 300px;
+  display: block;
+  padding: 0.5em;
+}
+
 /* Output boxes for TDEE and macro recommendations */
 /* stylelint-disable selector-id-pattern */
 #currentTDEE,
