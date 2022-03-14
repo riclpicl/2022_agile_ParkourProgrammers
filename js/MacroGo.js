@@ -53,8 +53,8 @@ function TDEE() {
     }
   }
   
-  if (sex = "male") {
-    totalDailyCalories * 1.1
+  if (sex === "male") {
+    totalDailyCalories = totalDailyCalories * 1.1;
   }
   
   surplusCalories = Math.round(totalDailyCalories - TDEE);
@@ -127,7 +127,6 @@ function TDEE() {
   var proteinCalories = totalDailyCalories - fatAndCarbCalories;
   var proteinPercentage = proteinCalories/totalDailyCalories;
   var fatAndCarbPercentage = 100 - proteinPercentage;
-  var fatAndCarbPercentage = 1 - proteinPercentage;
 
   carbRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.6)) / 4);
   
@@ -141,6 +140,28 @@ function TDEE() {
   document.getElementById("fatMacro").innerText = (fatRequirement + " grams");
   document.getElementById("carbMacro").innerText = (carbRequirement + " grams");
 
+}
+
+function customWeightChange() {
+  var customWeightChange = document.getElementById("customWeightChangeWeekly").value;
+
+  var Tone = "You should be in the toning phase";
+  var Bulk = "You should be in the bulking Phase";
+  var WeightLoss = "You should be in the weightloss Phase";
+  var calorieDeficit = "Not in a healthy weightloss range, please try again.";
+  var calorieSurplus = "Not in a healthy bulking range, please try again.";
+
+  if (customWeightChange >= 5) {
+    document.getElementById("customPhase").innerText = calorieSurplus;
+    } else if (customWeightChange <= -3.5) {
+        document.getElementById("customPhase").innerText = calorieDeficit;
+    } else if (customWeightChange >= 1 && customWeightChange <= 4.99) {
+        document.getElementById("customPhase").innerText = Bulk;
+      } else if (customWeightChange <= -0.99 && customWeightChange >= -3.49 ) {
+        document.getElementById("customPhase").innerText = WeightLoss;
+      } else {
+        document.getElementById("customPhase").innerText = Tone;
+      }
 }
 
 function trainingPhaseRec() {
@@ -262,8 +283,8 @@ function CalorieAvg() {
   var num7 = Number(document.getElementById("SatCalories").value);
 
   //average calorie intake over 7 days
-  var avgWeight = (num1 + num2 + num3 + num4 + num5 + num6 + num7) / 7;
+  var avgCalorie = (num1 + num2 + num3 + num4 + num5 + num6 + num7) / 7;
 
   // output and display average calories
-  document.getElementById("AverageCalories").innerText = Math.round(avgWeight);
+  document.getElementById("AverageCalories").innerText = Math.round(avgCalorie);
 }
