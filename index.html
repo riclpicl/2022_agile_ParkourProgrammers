@@ -36,52 +36,68 @@
     
     <!--TODO: Connect inputs to calculations and DB-->
     <!-- Likely thinking we'll need to have a submit button to commit info to DB but not refresh the page. -->
-    <div class="user-info">
-      <div>
-        <label>Start Date:</label>
+    <div class="container">
+      <div class="user-info">
         <div>
-          <input type="date" id="startDate" name="startDate">
+          <label>Start Date:</label>
+          <div>
+            <input type="date" id="startDate" name="startDate">
+          </div>
+        </div>
+        
+        <div class="toggle">
+          <label class="switch">
+            <input type="checkbox" id="Lbs_Kgs" name="Lbs_Kgs">
+            <span class="slider">
+             Lbs &nbsp; Kgs
+             </span>
+          </label>
+          
+        </div>
+       
+        <div class="tooltip">
+          <label>Current Weight:</label>
+          <div>
+            <input type="number" step="0.1" min="0" id="currentWeight" name="currentWeight" placeholder="Enter a valid number" oninput="validateFormNumber('currentWeight', 'weightSpan')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
+            <!-- TODO: Add proper placeholder text. -->
+            <span class="input-span" id="weightSpan">Please enter a valid number</span>
+          </div>
+        </div>
+        
+        <div class="tooltip">
+          <label>Estimated Body Fat Percentage:</label>
+          <div>
+            <input type="number" step="0.1" min="0" id="estBodyFatPercent" name="estBodyFatPercent" placeholder="Enter a valid number" oninput="validateFormNumber('estBodyFatPercent', 'fatSpan')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
+            <!-- TODO: Add proper placeholder text. -->
+            <span class="input-span" id="fatSpan">Please enter a valid number</span>
+          </div>
+        </div>
+          
+        <div>
+          <label>Sex:</label>
+          <div>
+            <select name="userSex" id="userSex" onchange="TDEE();GoalWeightChange();trainingPhaseRec()">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
         </div>
       </div>
       
-      <div class="toggle">
-        <label class="switch">
-          <input type="checkbox" id="Lbs_Kgs" name="Lbs_Kgs">
-          <span class="slider">
-           Lbs &nbsp; Kgs
-           </span>
-        </label>
-        
-      </div>
-     
-      <div class="tooltip">
-        <label>Current Weight:</label>
-        <div>
-          <input type="number" step="0.1" min="0" id="currentWeight" name="currentWeight" placeholder="Enter a valid number" oninput="validateFormNumber('currentWeight', 'weightSpan')">
-          <!-- TODO: Add proper placeholder text. -->
-          <span class="input-span" id="weightSpan">Please enter a valid number</span>
+      <div class="TDEE">
+          <h2>Your Estimated Total Daily Energy Expenditure and Macronutrient Requirement</h2>
+          <div class="calories">
+            <p class = "macros-block">Your Current TDEE is: <output id="currentTDEE"></output> </p>
+            <p class = "macros-block">Your Target Daily Surplus: <output id="dailySurplus"></output></p>
+            <p class = "macros-block">Target Daily Calorie Intake: <output id="totalCalories"></output> </p>
+          </div>
+          <div class="nutrients">
+            <p class = "macros-block">Protein: <output id="proteinMacro"></output></p>
+            <p class = "macros-block">Fat: <output id="fatMacro"></output> </p>
+            <p class = "macros-block">Carbs: <output id="carbMacro"></output></p>
+          </div>
         </div>
       </div>
-      
-      <div class="tooltip">
-        <label>Estimated Body Fat Percentage:</label>
-        <div>
-          <input type="number" step="0.1" min="0" id="estBodyFatPercent" name="estBodyFatPercent" placeholder="Enter a valid number" oninput="validateFormNumber('estBodyFatPercent', 'fatSpan')">
-          <!-- TODO: Add proper placeholder text. -->
-          <span class="input-span" id="fatSpan">Please enter a valid number</span>
-        </div>
-      </div>
-        
-      <div>
-        <label>Sex:</label>
-        <div>
-          <select name="userSex" id="userSex">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </div>
-      </div>
-    </div>
     
     <div class="weight-change-goals">
       <div>
@@ -97,32 +113,34 @@
         <ol>
         
           <!--TODO: Have selector input values connected to the calulations.-->
-          <li>
-            <h4>What Is Your Level of Training Experience?</h4>
-              <select name="experience" id="experience">
-                <option value="beginner" onClick="Disappear()">Beginner</option>
-                <option value="intermediate" onClick="Disappear()">Intermediate</option>
-                <option value="expert" onClick="Disappear()">Expert</option>
+          <div class="weight-change-container">
+            <li>
+              <h4>What Is Your Level of Training Experience?</h4>
+                <select name="experience" id="experience" onchange="TDEE();trainingPhaseRec();GoalWeightChange()">
+                  <option value="beginner" onClick="Disappear()">Beginner</option>
+                  <option value="intermediate" onClick="Disappear()">Intermediate</option>
+                  <option value="expert" onClick="Disappear()">Expert</option>
+                  <!-- <option value=""></option> -->
+                </select>
+                
+                <ul>
+                  <li id="beginnerDesc">Beginner - Less than 1 year of <em>consistent</em> training/dieting.</li>
+                  <li id="intermediateDesc">Intermediate - Approximately 1 year of <em>consistent</em> training/dieting.</li>
+                  <li id="expertDesc">Expert - Several years of <em>consistent</em> training/dieting.</li>
+                </ul>
+            </li>
+            
+            <!--TODO: Have selector input values connected to the calulations.-->
+            <li>
+              <h4>What Is the Current Goal of Your Training?</h4>
+              <select name="currentGoal" id="currentGoal" onchange="TDEE();trainingPhaseRec();GoalWeightChange()">
+                <option value="bulk">Bulking</option>
+                <option value="tone">Toning</option>
+                <option value="weightloss">Weightloss</option>
                 <!-- <option value=""></option> -->
               </select>
-              
-              <ul>
-                <li id="beginnerDesc">Beginner - Less than 1 year of <em>consistent</em> training/dieting.</li>
-                <li id="intermediateDesc">Intermediate - Approximately 1 year of <em>consistent</em> training/dieting.</li>
-                <li id="expertDesc">Expert - Several years of <em>consistent</em> training/dieting.</li>
-              </ul>
-          </li>
-          
-          <!--TODO: Have selector input values connected to the calulations.-->
-          <li>
-            <h4>What Is the Current Goal of Your Training?</h4>
-            <select name="currentGoal" id="currentGoal">
-              <option value="bulk">Bulking</option>
-              <option value="tone">Toning</option>
-              <option value="weightloss">Weightloss</option>
-              <!-- <option value=""></option> -->
-            </select>
-          </li>
+            </li>
+          </div>
           
           <!--TODO: Connect recommended phase calculation output here.-->
           <li>
@@ -146,26 +164,16 @@
             <!--TODO: After adding alternative weight options, review this section to indicate the chosen measurement system.-->
             <p>
               If you would like have a different goal than the one calculated
-              for you, enter the amount of weight change you would like to 
+              for you, enter the amount of weight change (+/-) you would like to 
               have weekly down below:
             </p>
             <input type="number" id="customWeightChangeWeekly" name="customWeightChangeWeekly">
             
-            <p id="customPhase">[OUTPUT HERE]</p>
-            <p id="customPhaseDesc">[OUTPUT HERE]</p>
+            <p><output id="customPhase"></output></p>
+            <p id="customPhaseDesc"></p>
           </li>
         </ul>
       </div>
-    </div>
-
-    <div class="TDEE">
-      <h2>Your Estimated Total Daily Energy Expenditure and Macronutrient Requirement</h2>
-      <p class = "macros-block">Your Current TDEE is: <output id="currentTDEE"></output> </p>
-      <p class = "macros-block">Your Target Daily Surplus: <output id="dailySurplus"></output></p>
-      <p class = "macros-block">Target Daily Calorie Intake: <output id="totalCalories"></output> </p>
-      <p class = "macros-block">Protein: <output id="proteinMacro"></output></p>
-      <p class = "macros-block">Fat: <output id="fatMacro"></output> </p>
-      <p class = "macros-block">Carbs: <output id="carbMacro"></output></p>
     </div>
 
     <div id="StatsTable">
@@ -195,13 +203,13 @@
             <tr>
 
                 <td>Weight</td>
-                <td><input type="number" min="0" id="SunWeight" oninput="validateFormNumber('SunWeight', 'SunWeightSpan')"><span class="input-span" id="SunWeightSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="MonWeight" oninput="validateFormNumber('MonWeight', 'MonWeightSpan')"><span class="input-span" id="MonWeightSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="TuesWeight" oninput="validateFormNumber('TuesWeight', 'TuesWeightSpan')"><span class="input-span" id="TuesWeightSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="WedWeight" oninput="validateFormNumber('WedWeight', 'WedWeightSpan')"><span class="input-span" id="WedWeightSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="ThursWeight" oninput="validateFormNumber('ThursWeight', 'ThursWeightSpan')"><span class="input-span" id="ThursWeightSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="FriWeight" oninput="validateFormNumber('FriWeight', 'FriWeightSpan')"><span class="input-span" id="FriWeightSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="SatWeight" value="0" oninput="validateFormNumber('SatWeight', 'SatWeightSpan')"><span class="input-span" id="SatWeightSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="0" id="SunWeight" oninput="validateFormNumber('SunWeight', 'SunWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="SunWeightSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="0" id="MonWeight" oninput="validateFormNumber('MonWeight', 'MonWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="MonWeightSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="0" id="TuesWeight" oninput="validateFormNumber('TuesWeight', 'TuesWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="TuesWeightSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="0" id="WedWeight" oninput="validateFormNumber('WedWeight', 'WedWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="WedWeightSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="0" id="ThursWeight" oninput="validateFormNumber('ThursWeight', 'ThursWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="ThursWeightSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="0" id="FriWeight" oninput="validateFormNumber('FriWeight', 'FriWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="FriWeightSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="0" id="SatWeight" value="0" oninput="validateFormNumber('SatWeight', 'SatWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="SatWeightSpan">Please enter a valid number</span></td>
                 <td id="AverageWeight">
                 </td>
             </tr>
@@ -209,13 +217,13 @@
             <tr>
                 <td>Calories</td>
                 <!-- Set min/max value attributes for user safety reasons. Max value is temporary! -->
-                <td><input type="number" min="1500" max="5000" id="SunCalories" oninput="validateFormNumber('SunCalories', 'SunCaloriesSpan')"><span class="input-span" id="SunCaloriesSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="1500" max="5000" id="MonCalories" oninput="validateFormNumber('MonCalories', 'MonCaloriesSpan')"><span class="input-span" id="MonCaloriesSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="1500" max="5000" id="TuesCalories" oninput="validateFormNumber('TuesCalories', 'TuesCaloriesSpan')"><span class="input-span" id="TuesCaloriesSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="1500" max="5000" id="WedCalories" oninput="validateFormNumber('WedCalories', 'WedCaloriesSpan')"><span class="input-span" id="WedCaloriesSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="1500" max="5000" id="ThursCalories" oninput="validateFormNumber('ThursCalories', 'ThursCaloriesSpan')"><span class="input-span" id="ThursCaloriesSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="1500" max="5000" id="FriCalories" oninput="validateFormNumber('FriCalories', 'FriCaloriesSpan')"><span class="input-span" id="FriCaloriesSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="1500" max="5000" id="SatCalories" oninput="validateFormNumber('SatCalories', 'SatCaloriesSpan')"><span class="input-span" id="SatCaloriesSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="1500" max="5000" id="SunCalories" oninput="validateFormNumber('SunCalories', 'SunCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="SunCaloriesSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="1500" max="5000" id="MonCalories" oninput="validateFormNumber('MonCalories', 'MonCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="MonCaloriesSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="1500" max="5000" id="TuesCalories" oninput="validateFormNumber('TuesCalories', 'TuesCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="TuesCaloriesSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="1500" max="5000" id="WedCalories" oninput="validateFormNumber('WedCalories', 'WedCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="WedCaloriesSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="1500" max="5000" id="ThursCalories" oninput="validateFormNumber('ThursCalories', 'ThursCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="ThursCaloriesSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="1500" max="5000" id="FriCalories" oninput="validateFormNumber('FriCalories', 'FriCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="FriCaloriesSpan">Please enter a valid number</span></td>
+                <td><input type="number" min="1500" max="5000" id="SatCalories" oninput="validateFormNumber('SatCalories', 'SatCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="SatCaloriesSpan">Please enter a valid number</span></td>
                 <td id="AverageCalories"></td>
             </tr>
 
