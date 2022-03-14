@@ -276,4 +276,9 @@ button {
   a {
     display: block;
   }
+  
+  .container {
+  display: initial;
+}
+  
 }
