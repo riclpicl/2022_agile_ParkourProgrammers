@@ -15,3 +15,11 @@ function validateFormNumber(numToVal, fetchSpanId) {
     $(spanId).show();
   }
 }
+
+
+//function 
+
+
+
+
+//function hideErroneousOutput
