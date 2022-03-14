@@ -53,8 +53,8 @@ function TDEE() {
     }
   }
   
-  if (sex = "male") {
-    totalDailyCalories * 1.1
+  if (sex === "male") {
+    totalDailyCalories = totalDailyCalories * 1.1;
   }
   
   surplusCalories = Math.round(totalDailyCalories - TDEE);
@@ -127,7 +127,6 @@ function TDEE() {
   var proteinCalories = totalDailyCalories - fatAndCarbCalories;
   var proteinPercentage = proteinCalories/totalDailyCalories;
   var fatAndCarbPercentage = 100 - proteinPercentage;
-  var fatAndCarbPercentage = 1 - proteinPercentage;
 
   carbRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.6)) / 4);
   
