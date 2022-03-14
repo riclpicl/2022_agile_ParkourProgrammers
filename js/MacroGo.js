@@ -26,60 +26,37 @@ function TDEE() {
   var TDEE = Math.round(BMR + TEF + EEE + NEAT);
 
 // total daily calories section
-  if (sex === "female") {
-    if (trainingExperience === "beginner") {
-      if (trainingGoal === "bulk") {
-        totalDailyCalories = weight * 17;
-      } else if (trainingGoal === "tone") {
-        totalDailyCalories = weight * 13;
-      } else {
-        totalDailyCalories = weight * 11;
-      }
-    } else if (trainingExperience === "intermediate") {
-      if (trainingGoal === "bulk") {
-        totalDailyCalories = weight * 19;
-      } else if (trainingGoal === "tone") {
-        totalDailyCalories = weight * 15;
-      } else {
-        totalDailyCalories = weight * 13;
-      }
+  
+  if (trainingExperience === "beginner") {
+    if (trainingGoal === "bulk") {
+      totalDailyCalories = weight * 17;
+    } else if (trainingGoal === "tone") {
+      totalDailyCalories = weight * 13;
     } else {
-      if (trainingGoal === "bulk") {
-        totalDailyCalories = weight * 21;
-      } else if (trainingGoal === "tone") {
-        totalDailyCalories = weight * 17;
-      } else {
-        totalDailyCalories = weight * 15;
-      }
+      totalDailyCalories = weight * 11;
     }
-  } else if (sex === "male") {
-    if (trainingExperience === "beginner") {
-      if (trainingGoal === "bulk") {
-        totalDailyCalories = weight * 18;
-      } else if (trainingGoal === "tone") {
-        totalDailyCalories = weight * 14;
-      } else {
-        totalDailyCalories = weight * 12;
-      }
-    } else if (trainingExperience === "intermediate") {
-      if (trainingGoal === "bulk") {
-        totalDailyCalories = weight * 20;
-      } else if (trainingGoal === "tone") {
-        totalDailyCalories = weight * 16;
-      } else {
-        totalDailyCalories = weight * 14;
-      }
+  } else if (trainingExperience === "intermediate") {
+    if (trainingGoal === "bulk") {
+      totalDailyCalories = weight * 19;
+    } else if (trainingGoal === "tone") {
+      totalDailyCalories = weight * 15;
     } else {
-      if (trainingGoal === "bulk") {
-        totalDailyCalories = weight * 22;
-      } else if (trainingGoal === "tone") {
-        totalDailyCalories = weight * 18;
-      } else {
-        totalDailyCalories = weight * 16;
-      }
+      totalDailyCalories = weight * 13;
     }
-
+  } else {
+    if (trainingGoal === "bulk") {
+      totalDailyCalories = weight * 21;
+    } else if (trainingGoal === "tone") {
+      totalDailyCalories = weight * 17;
+    } else {
+      totalDailyCalories = weight * 15;
+    }
   }
+  
+  if (sex === "male") {
+    totalDailyCalories = totalDailyCalories * 1.1;
+  }
+  
   surplusCalories = Math.round(totalDailyCalories - TDEE);
 
 //Macro Requirement section. Protien requirements are based on exercise experience, training goal, as well as body fat percentage
@@ -150,7 +127,6 @@ function TDEE() {
   var proteinCalories = totalDailyCalories - fatAndCarbCalories;
   var proteinPercentage = proteinCalories/totalDailyCalories;
   var fatAndCarbPercentage = 100 - proteinPercentage;
-  var fatAndCarbPercentage = 1 - proteinPercentage;
 
   carbRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.6)) / 4);
   
