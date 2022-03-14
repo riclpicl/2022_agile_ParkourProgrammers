@@ -46,10 +46,10 @@
         
         <div class="toggle">
           <label class="switch">
-            <input type="checkbox" id="Lbs_Kgs" name="Lbs_Kgs">
-            <span class="slider">
+            <input type="checkbox" id="Lbs_Kgs" name="Lbs_Kgs" oninput="TDEE();trainingPhaseRec();GoalWeightChange()">
+            <div class="slider">
              Lbs &nbsp; Kgs
-             </span>
+             </div>
           </label>
           
         </div>
@@ -57,7 +57,7 @@
         <div class="tooltip">
           <label>Current Weight:</label>
           <div>
-            <input type="number" step="0.1" min="0" id="currentWeight" name="currentWeight" placeholder="E.g. 150 (lbs)/68 (kg)" oninput="validateFormNumber('currentWeight', 'weightSpan')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
+            <input type="" min="0" maxlength="3" id="currentWeight" name="currentWeight" placeholder="E.g. 150 (lbs)/68 (kg)" oninput="validateFormNumber('currentWeight', 'weightSpan')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
             <!-- TODO: Add proper placeholder text. -->
             <span class="input-span" id="weightSpan">Please enter a valid number</span>
           </div>
@@ -66,7 +66,7 @@
         <div class="tooltip">
           <label>Estimated Body Fat Percentage:</label>
           <div>
-            <input type="number" min="0" id="estBodyFatPercent" name="estBodyFatPercent" placeholder="E.g. 18 (for 18%)" oninput="validateFormNumber('estBodyFatPercent', 'fatSpan')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
+            <input type="" min="0" maxlength="2" id="estBodyFatPercent" name="estBodyFatPercent" placeholder="E.g. 18 (for 18%)" oninput="validateFormNumber('estBodyFatPercent', 'fatSpan')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
             <!-- TODO: Add proper placeholder text. -->
             <span class="input-span" id="fatSpan">Please enter a valid number</span>
           </div>
@@ -101,10 +101,10 @@
     <div class="weight-change-goals">
       <div>
         <h2>Calculate Goal Weight Change</h2>
-        <input type="radio" id="goalChangeYes" onClick="Disappear()" name="weight-change-goals" checked>
+        <input type="radio" id="goalChangeYes" onClick="Disappear();TDEE();trainingPhaseRec();GoalWeightChange()" name="weight-change-goals" checked>
         <label>Yes</label>
         
-        <input type="radio" id="goalChangeNo" onClick="Disappear()" name="weight-change-goals">
+        <input type="radio" id="goalChangeNo" onClick="Disappear();TDEE();trainingPhaseRec();GoalWeightChange()" name="weight-change-goals">
         <label>No</label>
       </div>
       
@@ -227,11 +227,6 @@
             </tr>
 
         </table>  
-
-      <div>
-        <button onclick="trainingPhaseRec();GoalWeightChange();TDEE();WeightAvg();CalorieAvg();">Calculate</button>
-      </div>
-        
     </div>
   </body>
 </html>
