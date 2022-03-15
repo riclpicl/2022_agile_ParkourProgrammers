@@ -19,7 +19,6 @@ function TDEE() {
   }
 
   var BMR = (weight * 0.453592) * 20;
-  console.log("BMR" + BMR);
   var TEF = BMR * 0.1;
   var EEE = 150;
   var NEAT = 150;
@@ -126,7 +125,7 @@ function TDEE() {
   var fatAndCarbCalories = totalDailyCalories - (proteinRequirement * 4);
   var proteinCalories = totalDailyCalories - fatAndCarbCalories;
   var proteinPercentage = proteinCalories/totalDailyCalories;
-  var fatAndCarbPercentage = 100 - proteinPercentage;
+  var fatAndCarbPercentage = 1 - proteinPercentage;
 
   carbRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.6)) / 4);
   
@@ -224,10 +223,7 @@ function GoalWeightChange() {
       if (trainingExperience === "beginner") {        
         if (bodyFat < 20) {
           weightGain = Math.round(weight * 0.01) / 4;
-          } else {
-              //TODO: Proper if/else logic
-              weightGain = "Uh oh, broke";
-            }
+          } 
         } else if (trainingExperience === "intermediate") {
           weightGain = Math.round(weight * 0.05) / 4;
         } else if (trainingExperience === "expert") {

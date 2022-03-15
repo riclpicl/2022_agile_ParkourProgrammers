@@ -9,6 +9,7 @@
     <!-- jQuery has to go first in the scripts. -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/MacroGo.js" defer></script>
+    <script src="js/mobileMenu.js" defer></script>
     <script src="js/disappear.js" defer></script>
     <script src="js/validate.js" defer></script>
     
@@ -38,10 +39,11 @@
     <div class="container">
       <div class="user-info">
         <div>
-          <label>Start Date:</label>
-          <div>
+          <!-- <label>Start Date:</label>
+           Unnecessary Calender, intended to sync with daily intake calender but seems redundant?
+            <div>
             <input type="date" id="startDate" name="startDate">
-          </div>
+          </div> -->
         </div>
         
         <div class="toggle">
@@ -51,7 +53,6 @@
              Lbs &nbsp; Kgs
              </div>
           </label>
-          
         </div>
        
       <ul>
@@ -59,7 +60,7 @@
         <li class="warning-heading" id="fatMaxText">Body fat input only allows up to 2 characters (e.g. 99 for 99%)</li>
       </ul>
        
-        <div class="tooltip">
+        <div class="tooltip seperate">
           <label>Current Weight:</label>
           <div>
             <input type="number" min="0" id="currentWeight" name="currentWeight" placeholder="E.g. 150 (lbs)/68 (kg)" oninput="validateFormNumber('currentWeight', 'weightSpan');validateInputLength('currentWeight', 4, 'weightMaxText')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
@@ -77,7 +78,7 @@
           </div>
         </div>
           
-        <div>
+        <div class="separate">
           <label>Sex:</label>
           <div>
             <select name="userSex" id="userSex" onchange="TDEE();GoalWeightChange();trainingPhaseRec()">
