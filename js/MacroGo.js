@@ -141,6 +141,28 @@ function TDEE() {
 
 }
 
+function customWeightChange() {
+  var customWeightChange = document.getElementById("customWeightChangeWeekly").value;
+
+  var Tone = "You should be in the toning phase";
+  var Bulk = "You should be in the bulking Phase";
+  var WeightLoss = "You should be in the weightloss Phase";
+  var calorieDeficit = "Not in a healthy weightloss range, please try again.";
+  var calorieSurplus = "Not in a healthy bulking range, please try again.";
+
+  if (customWeightChange >= 5) {
+    document.getElementById("customPhase").innerText = calorieSurplus;
+    } else if (customWeightChange <= -3.5) {
+        document.getElementById("customPhase").innerText = calorieDeficit;
+    } else if (customWeightChange >= 1 && customWeightChange <= 4.99) {
+        document.getElementById("customPhase").innerText = Bulk;
+      } else if (customWeightChange <= -0.99 && customWeightChange >= -3.49 ) {
+        document.getElementById("customPhase").innerText = WeightLoss;
+      } else {
+        document.getElementById("customPhase").innerText = Tone;
+      }
+}
+
 function trainingPhaseRec() {
   var bodyFat = document.getElementById("estBodyFatPercent").value;
   var sex = document.getElementById("userSex").value;
@@ -201,10 +223,7 @@ function GoalWeightChange() {
       if (trainingExperience === "beginner") {        
         if (bodyFat < 20) {
           weightGain = Math.round(weight * 0.01) / 4;
-          } else {
-              //TODO: Proper if/else logic
-              weightGain = "Uh oh, broke";
-            }
+          } 
         } else if (trainingExperience === "intermediate") {
           weightGain = Math.round(weight * 0.05) / 4;
         } else if (trainingExperience === "expert") {
@@ -260,8 +279,8 @@ function CalorieAvg() {
   var num7 = Number(document.getElementById("SatCalories").value);
 
   //average calorie intake over 7 days
-  var avgWeight = (num1 + num2 + num3 + num4 + num5 + num6 + num7) / 7;
+  var avgCalorie = (num1 + num2 + num3 + num4 + num5 + num6 + num7) / 7;
 
   // output and display average calories
-  document.getElementById("AverageCalories").innerText = Math.round(avgWeight);
+  document.getElementById("AverageCalories").innerText = Math.round(avgCalorie);
 }
