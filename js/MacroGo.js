@@ -19,7 +19,6 @@ function TDEE() {
   }
 
   var BMR = (weight * 0.453592) * 20;
-  console.log("BMR" + BMR);
   var TEF = BMR * 0.1;
   var EEE = 150;
   var NEAT = 150;
