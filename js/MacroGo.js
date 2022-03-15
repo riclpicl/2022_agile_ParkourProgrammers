@@ -123,9 +123,13 @@ function TDEE() {
   
    // Fat and Carb Requirements based on how many calories of protein are consumed
   var fatAndCarbCalories = totalDailyCalories - (proteinRequirement * 4);
+  console.log(fatAndCarbCalories);
   var proteinCalories = totalDailyCalories - fatAndCarbCalories;
+  console.log(proteinCalories);
   var proteinPercentage = proteinCalories/totalDailyCalories;
+  console.log(proteinPercentage);
   var fatAndCarbPercentage = 1 - proteinPercentage;
+  console.log(fatAndCarbPercentage);
 
   carbRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.6)) / 4);
   
@@ -136,7 +140,7 @@ function TDEE() {
   document.getElementById("dailySurplus").innerText = (surplusCalories + " calories");
   document.getElementById("totalCalories").innerText = (Math.round(totalDailyCalories) + " calories");
   document.getElementById("proteinMacro").innerText = (proteinRequirement + " grams");
-  document.getElementById("fatMacro").innerText = (fatRequirement + " grams");
+  document.getElementById("fatMacro").innerText = ( fatRequirement + " grams");
   document.getElementById("carbMacro").innerText = (carbRequirement + " grams");
 
 }

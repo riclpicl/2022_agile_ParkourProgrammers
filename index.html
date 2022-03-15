@@ -16,6 +16,7 @@
     <!-- Add more scripts with this: <script src="js/.js" defer></script> -->
     <!---->
   </head>
+  <body>
   <header>
     <nav>
       <ul>
@@ -31,7 +32,6 @@
       </ul>
     </nav>
   </header>
-  <body>
     <h1>MacroGoTracker</h1>
     
     <!--TODO: Connect inputs to calculations and DB-->
@@ -49,9 +49,9 @@
         <div class="toggle">
           <label class="switch">
             <input type="checkbox" id="Lbs_Kgs" name="Lbs_Kgs" oninput="TDEE();trainingPhaseRec();GoalWeightChange()">
-            <div class="slider">
+            <span class="slider">
              Lbs &nbsp; Kgs
-             </div>
+             </span>
           </label>
         </div>
        
@@ -117,35 +117,33 @@
       <div id="goal-calculated-menu">
         <ol>
         
-          <!--TODO: Have selector input values connected to the calulations.-->
-          <div class="weight-change-container">
-            <li>
-              <h4>What Is Your Level of Training Experience?</h4>
-                <select name="experience" id="experience" onchange="TDEE();trainingPhaseRec();GoalWeightChange()">
-                  <option value="beginner" onClick="Disappear()">Beginner</option>
-                  <option value="intermediate" onClick="Disappear()">Intermediate</option>
-                  <option value="expert" onClick="Disappear()">Expert</option>
-                  <!-- <option value=""></option> -->
-                </select>
-                
-                <ul>
-                  <li id="beginnerDesc">Beginner - Less than 1 year of <em>consistent</em> training/dieting.</li>
-                  <li id="intermediateDesc">Intermediate - Approximately 1 year of <em>consistent</em> training/dieting.</li>
-                  <li id="expertDesc">Expert - Several years of <em>consistent</em> training/dieting.</li>
-                </ul>
-            </li>
-            
-            <!--TODO: Have selector input values connected to the calulations.-->
-            <li>
-              <h4>What Is the Current Goal of Your Training?</h4>
-              <select name="currentGoal" id="currentGoal" onchange="TDEE();trainingPhaseRec();GoalWeightChange()">
-                <option value="bulk">Bulking</option>
-                <option value="tone">Toning</option>
-                <option value="weightloss">Weightloss</option>
+        <!--TODO: Have selector input values connected to the calulations.-->
+          <li>
+            <h4>What Is Your Level of Training Experience?</h4>
+              <select name="experience" id="experience" onchange="TDEE();trainingPhaseRec();GoalWeightChange()">
+                <option value="beginner" onClick="Disappear()">Beginner</option>
+                <option value="intermediate" onClick="Disappear()">Intermediate</option>
+                <option value="expert" onClick="Disappear()">Expert</option>
                 <!-- <option value=""></option> -->
               </select>
-            </li>
-          </div>
+              
+              <ul>
+                <li id="beginnerDesc">Beginner - Less than 1 year of <em>consistent</em> training/dieting.</li>
+                <li id="intermediateDesc">Intermediate - Approximately 1 year of <em>consistent</em> training/dieting.</li>
+                <li id="expertDesc">Expert - Several years of <em>consistent</em> training/dieting.</li>
+              </ul>
+          </li>
+          
+          <!--TODO: Have selector input values connected to the calulations.-->
+          <li>
+            <h4>What Is the Current Goal of Your Training?</h4>
+            <select name="currentGoal" id="currentGoal" onchange="TDEE();trainingPhaseRec();GoalWeightChange()">
+              <option value="bulk">Bulking</option>
+              <option value="tone">Toning</option>
+              <option value="weightloss">Weightloss</option>
+              <!-- <option value=""></option> -->
+            </select>
+          </li>
           
           <!--TODO: Connect recommended phase calculation output here.-->
           <li>

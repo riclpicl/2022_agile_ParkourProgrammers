@@ -169,10 +169,6 @@ input:checked + .slider::before {
   padding: 0.5em;
 }
 
-#goal-calculated-menu ol{
-  display: flex;
-}
-
 .weight-change-container {
   margin-right: 30px;
 }
@@ -246,6 +242,10 @@ nav {
 
 button {
   display: none;
+}
+
+.information {
+  font-size: 1.2em;
 }
 
 /* Change the layout of the navigation bar for all the screens that have a width less or equal than 500px */
