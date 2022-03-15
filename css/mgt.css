@@ -2,7 +2,8 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  /* This option by default dispose the elements in a row*/
+
+  /* This option by default dispose the elements in a row */
   display: flex;
 }
 
@@ -51,7 +52,7 @@ ul {
 body {
   margin: 10px;
   padding: 10px;
-  background-color: #90C2E7;
+  background-color: #90c2e7;
 }
 
 .container {
@@ -139,11 +140,11 @@ label p {
 }
 
 input:checked + .slider {
-  background-color: #4E8098;
+  background-color: #4e8098;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #4E8098;
+  box-shadow: 0 0 1px #4e8098;
 }
 
 input:checked + .slider::before {
@@ -169,7 +170,7 @@ input:checked + .slider::before {
   padding: 0.5em;
 }
 
-#goal-calculated-menu ol{
+#goal-calculated-menu ol {
   display: flex;
 }
 
@@ -178,7 +179,7 @@ input:checked + .slider::before {
 }
 
 /* stylelint-disable-next-line selector-id-pattern */
-#customPhase { 
+#customPhase {
   box-shadow: 0 0 5px 1px #d3d3d3;
   height: 30px;
   width: 300px;
@@ -206,7 +207,8 @@ input:checked + .slider::before {
   width: 70%;
 }
 
-.table th, .table td {
+.table th,
+.table td {
   border: 1px solid;
 }
 
@@ -219,12 +221,13 @@ input:checked + .slider::before {
   padding-top: 20px;
 }
 
-
-/* Navigation Styling*/
+/* Navigation Styling */
 nav li {
   list-style-type: none;
-  /* First value is top and bottom side, second value is left and right side*/
+
+  /* First value is top and bottom side, second value is left and right side */
   margin: 0 2vw;
+
   /* Font sizze will be 3% of the height of the viewport */
   font-size: 3vh;
 }
@@ -232,16 +235,16 @@ nav li {
 a {
   text-decoration: none;
   color: #092327;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a:hover {
-  background-color: #00A9A5;
+  background-color: #00a9a5;
 }
 
 nav {
   width: 100vw;
-  background-color: #4E8098;
+  background-color: #4e8098;
 }
 
 button {
@@ -249,20 +252,19 @@ button {
 }
 
 /* Change the layout of the navigation bar for all the screens that have a width less or equal than 500px */
-@media only screen and (max-width: 500px){
-
+@media only screen and (max-width: 500px) {
   button {
     /* Makes the button visible */
     display: block;
     padding: 2vw;
     font-size: 3vh;
-    background-color: #4E8098;
+    background-color: #4e8098;
     border: none;
     outline: none;
     cursor: pointer;
     align-self: flex-start;
-
   }
+
   /* shows elements in a column */
   ul {
     flex-direction: column;
@@ -277,9 +279,8 @@ button {
   a {
     display: block;
   }
-  
+
   .container {
-  display: initial;
-}
-  
+    display: initial;
+  }
 }
