@@ -10,6 +10,11 @@ ul {
   display: none;
 }
 
+.warning-heading {
+  display: none;
+  color: red;
+}
+
 .error {
   border: 1px solid red;
 }

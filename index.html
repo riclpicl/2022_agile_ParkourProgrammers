@@ -54,10 +54,15 @@
           
         </div>
        
+      <ul>
+        <li class="warning-heading" id="weightMaxText">Current weight input only allows up to 4 characters (e.g. 9999/999.9)</li>
+        <li class="warning-heading" id="fatMaxText">Body fat input only allows up to 2 characters (e.g. 99 for 99%)</li>
+      </ul>
+       
         <div class="tooltip">
           <label>Current Weight:</label>
           <div>
-            <input type="" min="0" maxlength="3" id="currentWeight" name="currentWeight" placeholder="E.g. 150 (lbs)/68 (kg)" oninput="validateFormNumber('currentWeight', 'weightSpan')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
+            <input type="number" min="0" id="currentWeight" name="currentWeight" placeholder="E.g. 150 (lbs)/68 (kg)" oninput="validateFormNumber('currentWeight', 'weightSpan');validateInputLength('currentWeight', 4, 'weightMaxText')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
             <!-- TODO: Add proper placeholder text. -->
             <span class="input-span" id="weightSpan">Please enter a valid number</span>
           </div>
@@ -66,7 +71,7 @@
         <div class="tooltip">
           <label>Estimated Body Fat Percentage:</label>
           <div>
-            <input type="" min="0" maxlength="2" id="estBodyFatPercent" name="estBodyFatPercent" placeholder="E.g. 18 (for 18%)" oninput="validateFormNumber('estBodyFatPercent', 'fatSpan')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
+            <input type="number" min="0" id="estBodyFatPercent" name="estBodyFatPercent" placeholder="E.g. 18 (for 18%)" oninput="validateFormNumber('estBodyFatPercent', 'fatSpan');validateInputLength('estBodyFatPercent', 2, 'fatMaxText')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
             <!-- TODO: Add proper placeholder text. -->
             <span class="input-span" id="fatSpan">Please enter a valid number</span>
           </div>
