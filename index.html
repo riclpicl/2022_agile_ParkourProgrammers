@@ -56,7 +56,7 @@
           
         </div>
        
-        <div class="tooltip">
+        <div class="tooltip separate">
           <label>Current Weight:</label>
           <div>
             <input type="number" step="0.1" min="0" id="currentWeight" name="currentWeight" placeholder="Enter a valid number" oninput="validateFormNumber('currentWeight', 'weightSpan')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
@@ -74,7 +74,7 @@
           </div>
         </div>
           
-        <div>
+        <div class="separate">
           <label>Sex:</label>
           <div>
             <select name="userSex" id="userSex" onchange="TDEE();GoalWeightChange();trainingPhaseRec()">

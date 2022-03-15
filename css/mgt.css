@@ -210,6 +210,10 @@ input:checked + .slider::before {
   width: 90%;
 }
 
+.separate {
+  padding-top: 20px;
+}
+
 
 /* Navigation Styling*/
 nav li {

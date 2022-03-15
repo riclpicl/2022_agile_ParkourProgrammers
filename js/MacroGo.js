@@ -125,7 +125,7 @@ function TDEE() {
   var fatAndCarbCalories = totalDailyCalories - (proteinRequirement * 4);
   var proteinCalories = totalDailyCalories - fatAndCarbCalories;
   var proteinPercentage = proteinCalories/totalDailyCalories;
-  var fatAndCarbPercentage = 100 - proteinPercentage;
+  var fatAndCarbPercentage = 1 - proteinPercentage;
 
   carbRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.6)) / 4);
   
