@@ -224,10 +224,7 @@ function GoalWeightChange() {
       if (trainingExperience === "beginner") {        
         if (bodyFat < 20) {
           weightGain = Math.round(weight * 0.01) / 4;
-          } else {
-              //TODO: Proper if/else logic
-              weightGain = "Uh oh, broke";
-            }
+          } 
         } else if (trainingExperience === "intermediate") {
           weightGain = Math.round(weight * 0.05) / 4;
         } else if (trainingExperience === "expert") {
