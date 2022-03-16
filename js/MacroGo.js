@@ -133,7 +133,7 @@ function TDEE() {
 
   carbRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.6)) / 4);
   
- fatRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.4)) / 9);
+  fatRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.4)) / 9);
 
   //Polulate with current information
   document.getElementById("currentTDEE").innerText = (TDEE + " calories");
@@ -142,7 +142,6 @@ function TDEE() {
   document.getElementById("proteinMacro").innerText = (proteinRequirement + " grams");
   document.getElementById("fatMacro").innerText = ( fatRequirement + " grams");
   document.getElementById("carbMacro").innerText = (carbRequirement + " grams");
-
 }
 
 function customWeightChange() {
@@ -175,7 +174,6 @@ function trainingPhaseRec() {
   var Bulk = "Bulking Phase";
   var WeightLoss = "Weightloss Phase";
 
-
   if (bodyFat >= 22 && sex === "female" || bodyFat >= 18 && sex === "male") {
     document.getElementById("recPhase").innerText = WeightLoss;
   } else if (bodyFat <= 16 && sex === "female" || bodyFat <= 6 && sex === "male") {
@@ -197,7 +195,6 @@ function GoalWeightChange() {
   var weightGain;
   var weightLoss;
   var maintain;
-
 
   if (sex === "female") {
     if (trainingGoal === "bulk") {
