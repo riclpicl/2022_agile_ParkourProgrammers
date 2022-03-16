@@ -123,13 +123,13 @@ function TDEE() {
   
    // Fat and Carb Requirements based on how many calories of protein are consumed
   var fatAndCarbCalories = totalDailyCalories - (proteinRequirement * 4);
-  console.log(fatAndCarbCalories);
+  
   var proteinCalories = totalDailyCalories - fatAndCarbCalories;
-  console.log(proteinCalories);
+  
   var proteinPercentage = proteinCalories/totalDailyCalories;
-  console.log(proteinPercentage);
+  
   var fatAndCarbPercentage = 1 - proteinPercentage;
-  console.log(fatAndCarbPercentage);
+  
 
   carbRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.6)) / 4);
   
@@ -255,36 +255,137 @@ function GoalWeightChange() {
 }
 
 function WeightAvg() {
-  // take user input and convert to integer
-  var num1 = Number(document.getElementById("SunWeight").value);
-  var num2 = Number(document.getElementById("MonWeight").value);
-  var num3 = Number(document.getElementById("TuesWeight").value);
-  var num4 = Number(document.getElementById("WedWeight").value);
-  var num5 = Number(document.getElementById("ThursWeight").value);
-  var num6 = Number(document.getElementById("FriWeight").value);
-  var num7 = Number(document.getElementById("SatWeight").value);
-
-  //average weight over 7 days
-  var avgWeight = (num1 + num2 + num3 + num4 + num5 + num6 + num7) / 7;
-
-  // display and output average weight
+  
+  var weightArray = [];
+  var weightArrayFiltered = [];
+  var totalWeight = 0;
+  
+  // take user input and convert to integer while adding to an array
+  weightArray.push(Number(document.getElementById("SunWeight").value), Number(document.getElementById("MonWeight").value),Number(document.getElementById("TuesWeight").value), Number(document.getElementById("WedWeight").value), Number(document.getElementById("ThursWeight").value), Number(document.getElementById("FriWeight").value), Number(document.getElementById("SatWeight").value));
+  
+  // loop through that array and store anything over 0 to an array
+  for (var value of weightArray) {
+    if (value >= 1) {
+      weightArrayFiltered.push(value);
+    }
+  }
+  
+  // use that new array to add the values to total weight of the week
+  for (var value of weightArrayFiltered) {
+    totalWeight += value;
+  }
+  
+  var avgWeight = totalWeight / weightArrayFiltered.length;
+  
+  // display and output average Weight
   document.getElementById("AverageWeight").innerText = Math.round(avgWeight);
 }
 
 
 function CalorieAvg() {
-  // take user calorie input and convert to integer
-  var num1 = Number(document.getElementById("SunCalories").value);
-  var num2 = Number(document.getElementById("MonCalories").value);
-  var num3 = Number(document.getElementById("TuesCalories").value);
-  var num4 = Number(document.getElementById("WedCalories").value);
-  var num5 = Number(document.getElementById("ThursCalories").value);
-  var num6 = Number(document.getElementById("FriCalories").value);
-  var num7 = Number(document.getElementById("SatCalories").value);
+  
+  var caloriesArray = [];
+  var caloriesArrayFiltered = [];
+  var totalCalories = 0;
+  
+  // take user input and convert to integer while adding to an array
+  caloriesArray.push(Number(document.getElementById("SunCalories").value), Number(document.getElementById("MonCalories").value),Number(document.getElementById("TuesCalories").value), Number(document.getElementById("WedCalories").value), Number(document.getElementById("ThursCalories").value), Number(document.getElementById("FriCalories").value), Number(document.getElementById("SatCalories").value));
+  
+  // loop through that array and store anything over 0 to an array
+  for (var value of caloriesArray) {
+    if (value >= 1) {
+      caloriesArrayFiltered.push(value);
+    }
+  }
+  
+  // use that new array to add the values to total calories of the week
+  for (var value of caloriesArrayFiltered) {
+    totalCalories += value;
+  }
+  
+  var avgCalories = totalCalories / caloriesArrayFiltered.length;
+  
+  // display and output average Calories
+  document.getElementById("AverageCalories").innerText = Math.round(avgCalories);
+}
 
-  //average calorie intake over 7 days
-  var avgCalorie = (num1 + num2 + num3 + num4 + num5 + num6 + num7) / 7;
+function ProteinAvg() {
+  
+  var proteinArray = [];
+  var proteinArrayFiltered = [];
+  var totalProtein = 0;
+  
+  // take user input and convert to integer while adding to an array
+  proteinArray.push(Number(document.getElementById("SunProtein").value), Number(document.getElementById("MonProtein").value),Number(document.getElementById("TuesProtein").value), Number(document.getElementById("WedProtein").value), Number(document.getElementById("ThursProtein").value), Number(document.getElementById("FriProtein").value), Number(document.getElementById("SatProtein").value));
+  
+  // loop through that array and store anything over 0 to an array
+  for (var value of proteinArray) {
+    if (value >= 1) {
+      proteinArrayFiltered.push(value);
+    }
+  }
+  
+  // use that new array to add the values to total Protein of the week
+  for (var value of proteinArrayFiltered) {
+    totalProtein += value;
+  }
+  
+  var avgProtein = totalProtein / proteinArrayFiltered.length;
+  
+  // display and output average Protein
+  document.getElementById("AverageProtein").innerText = Math.round(avgProtein);
+}
 
-  // output and display average calories
-  document.getElementById("AverageCalories").innerText = Math.round(avgCalorie);
+function CarbsAvg() {
+  
+  var carbsArray = [];
+  var carbsArrayFiltered = [];
+  var totalCarbs = 0;
+  
+  // take user input and convert to integer while adding to an array
+  carbsArray.push(Number(document.getElementById("SunCarbs").value), Number(document.getElementById("MonCarbs").value),Number(document.getElementById("TuesCarbs").value), Number(document.getElementById("WedCarbs").value), Number(document.getElementById("ThursCarbs").value), Number(document.getElementById("FriCarbs").value), Number(document.getElementById("SatCarbs").value));
+  
+  // loop through that array and store anything over 0 to an array
+  for (var value of carbsArray) {
+    if (value >= 1) {
+      carbsArrayFiltered.push(value);
+    }
+  }
+  
+  // use that new array to add the values to total Carbs of the week
+  for (var value of carbsArrayFiltered) {
+    totalCarbs += value;
+  }
+  
+  var avgCarbs = totalCarbs / carbsArrayFiltered.length;
+  
+  // display and output average Carbs
+  document.getElementById("AverageCarbs").innerText = Math.round(avgCarbs);
+}
+
+function FatAvg() {
+  
+  var fatArray = [];
+  var fatArrayFiltered = [];
+  var totalFat = 0;
+  
+  // take user input and convert to integer while adding to an array
+  fatArray.push(Number(document.getElementById("SunFat").value), Number(document.getElementById("MonFat").value),Number(document.getElementById("TuesFat").value), Number(document.getElementById("WedFat").value), Number(document.getElementById("ThursFat").value), Number(document.getElementById("FriFat").value), Number(document.getElementById("SatFat").value));
+  
+  // loop through that array and store anything over 0 to an array
+  for (var value of fatArray) {
+    if (value >= 1) {
+      fatArrayFiltered.push(value);
+    }
+  }
+  
+  // use that new array to add the values to total fat of the week
+  for (var value of fatArrayFiltered) {
+    totalFat += value;
+  }
+  
+  var avgFat = totalFat / fatArrayFiltered.length;
+  
+  // display and output average Fat
+  document.getElementById("AverageFat").innerText = Math.round(avgFat);
 }
