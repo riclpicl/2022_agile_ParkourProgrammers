@@ -16,6 +16,9 @@ function TDEE() {
   if (!lbs_kgs.checked) {
     // if it is not checked it weight should be converted to pounds
     weight = weight / 0.453592;
+    document.getElementById("weightLabel").innerHTML = "Current Weight: Kgs"
+  } else {
+    document.getElementById("weightLabel").innerHTML = "Current Weight: Lbs"
   }
 
   var BMR = (weight * 0.453592) * 20;
@@ -136,12 +139,14 @@ function TDEE() {
   fatRequirement = Math.round((fatAndCarbCalories * (fatAndCarbPercentage * 0.4)) / 9);
 
   //Polulate with current information
-  document.getElementById("currentTDEE").innerText = (TDEE + " calories");
-  document.getElementById("dailySurplus").innerText = (surplusCalories + " calories");
-  document.getElementById("totalCalories").innerText = (Math.round(totalDailyCalories) + " calories");
-  document.getElementById("proteinMacro").innerText = (proteinRequirement + " grams");
-  document.getElementById("fatMacro").innerText = ( fatRequirement + " grams");
-  document.getElementById("carbMacro").innerText = (carbRequirement + " grams");
+  if (TDEE > 799) {
+    document.getElementById("currentTDEE").innerText = (TDEE + " calories");
+    document.getElementById("dailySurplus").innerText = (surplusCalories + " calories");
+    document.getElementById("totalCalories").innerText = (Math.round(totalDailyCalories) + " calories");
+    document.getElementById("proteinMacro").innerText = (proteinRequirement + " grams");
+    document.getElementById("fatMacro").innerText = ( fatRequirement + " grams");
+    document.getElementById("carbMacro").innerText = (carbRequirement + " grams");
+  }
 }
 
 function customWeightChange() {

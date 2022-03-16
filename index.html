@@ -61,7 +61,7 @@
       </ul>
        
         <div class="tooltip seperate">
-          <label>Current Weight:</label>
+          <label id="weightLabel">Current Weight: Lbs</label>
           <div>
             <input type="number" min="0" id="currentWeight" name="currentWeight" placeholder="E.g. 150 (lbs)/68 (kg)" oninput="validateFormNumber('currentWeight', 'weightSpan');validateInputLength('currentWeight', 4, 'weightMaxText')" onkeyup="TDEE();trainingPhaseRec();GoalWeightChange()">
             <!-- TODO: Add proper placeholder text. -->
