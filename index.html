@@ -91,12 +91,12 @@
       
       <div class="TDEE">
           <h2>Your Estimated Total Daily Energy Expenditure and Macronutrient Requirement</h2>
-          <div class="calories">
+          <div class="container">
             <p class = "macros-block">Your Current TDEE is: <output id="currentTDEE"></output> </p>
             <p class = "macros-block">Your Target Daily Surplus: <output id="dailySurplus"></output></p>
             <p class = "macros-block">Target Daily Calorie Intake: <output id="totalCalories"></output> </p>
           </div>
-          <div class="nutrients">
+          <div class="container">
             <p class = "macros-block">Protein: <output id="proteinMacro"></output></p>
             <p class = "macros-block">Fat: <output id="fatMacro"></output> </p>
             <p class = "macros-block">Carbs: <output id="carbMacro"></output></p>
@@ -183,7 +183,7 @@
         <h3>Enter your calorie intake and weight (daily).</h3>
         <table>
             <tr>
-                <th>Week</th>
+                <td>Week</td>
             </tr>
 
             <tr>
@@ -205,66 +205,66 @@
             </tr>
             <tr>
                 <td>Weight</td>
-                <td><input type="number" min="0" id="SunWeight" oninput="validateFormNumber('SunWeight', 'SunWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="SunWeightSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="MonWeight" oninput="validateFormNumber('MonWeight', 'MonWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="MonWeightSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="TuesWeight" oninput="validateFormNumber('TuesWeight', 'TuesWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="TuesWeightSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="WedWeight" oninput="validateFormNumber('WedWeight', 'WedWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="WedWeightSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="ThursWeight" oninput="validateFormNumber('ThursWeight', 'ThursWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="ThursWeightSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="FriWeight" oninput="validateFormNumber('FriWeight', 'FriWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="FriWeightSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="SatWeight" oninput="validateFormNumber('SatWeight', 'SatWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="SatWeightSpan">Please enter a valid number</span></td>
-                <td id="AverageWeight">
+                <td label="Sunday"><input type="number" min="0" id="SunWeight" oninput="validateFormNumber('SunWeight', 'SunWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="SunWeightSpan">Please enter a valid number</span></td>
+                <td label="Monday"><input type="number" min="0" id="MonWeight" oninput="validateFormNumber('MonWeight', 'MonWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="MonWeightSpan">Please enter a valid number</span></td>
+                <td label="Tuesday"><input type="number" min="0" id="TuesWeight" oninput="validateFormNumber('TuesWeight', 'TuesWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="TuesWeightSpan">Please enter a valid number</span></td>
+                <td label="Wednesday"><input type="number" min="0" id="WedWeight" oninput="validateFormNumber('WedWeight', 'WedWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="WedWeightSpan">Please enter a valid number</span></td>
+                <td label="Thursday"><input type="number" min="0" id="ThursWeight" oninput="validateFormNumber('ThursWeight', 'ThursWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="ThursWeightSpan">Please enter a valid number</span></td>
+                <td label="Firday"><input type="number" min="0" id="FriWeight" oninput="validateFormNumber('FriWeight', 'FriWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="FriWeightSpan">Please enter a valid number</span></td>
+                <td label="Saturday"><input type="number" min="0" id="SatWeight" oninput="validateFormNumber('SatWeight', 'SatWeightSpan')" onkeyup="WeightAvg()"><span class="input-span" id="SatWeightSpan">Please enter a valid number</span></td>
+                <td label="Average" id="AverageWeight">
                 </td>
             </tr>
 
             <tr>
                 <td>Calories</td>
                 <!-- Set min/max value attributes for user safety reasons. Max value is temporary! -->
-                <td><input type="number" min="1500" max="5000" id="SunCalories" oninput="validateFormNumber('SunCalories', 'SunCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="SunCaloriesSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="1500" max="5000" id="MonCalories" oninput="validateFormNumber('MonCalories', 'MonCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="MonCaloriesSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="1500" max="5000" id="TuesCalories" oninput="validateFormNumber('TuesCalories', 'TuesCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="TuesCaloriesSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="1500" max="5000" id="WedCalories" oninput="validateFormNumber('WedCalories', 'WedCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="WedCaloriesSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="1500" max="5000" id="ThursCalories" oninput="validateFormNumber('ThursCalories', 'ThursCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="ThursCaloriesSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="1500" max="5000" id="FriCalories" oninput="validateFormNumber('FriCalories', 'FriCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="FriCaloriesSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="1500" max="5000" id="SatCalories" oninput="validateFormNumber('SatCalories', 'SatCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="SatCaloriesSpan">Please enter a valid number</span></td>
-                <td id="AverageCalories"></td>
+                <td label="Sunday"><input type="number" min="1500" max="5000" id="SunCalories" oninput="validateFormNumber('SunCalories', 'SunCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="SunCaloriesSpan">Please enter a valid number</span></td>
+                <td label="Monday"><input type="number" min="1500" max="5000" id="MonCalories" oninput="validateFormNumber('MonCalories', 'MonCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="MonCaloriesSpan">Please enter a valid number</span></td>
+                <td label="Tuesday"><input type="number" min="1500" max="5000" id="TuesCalories" oninput="validateFormNumber('TuesCalories', 'TuesCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="TuesCaloriesSpan">Please enter a valid number</span></td>
+                <td label="Wednesday"><input type="number" min="1500" max="5000" id="WedCalories" oninput="validateFormNumber('WedCalories', 'WedCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="WedCaloriesSpan">Please enter a valid number</span></td>
+                <td label="Thursday"><input type="number" min="1500" max="5000" id="ThursCalories" oninput="validateFormNumber('ThursCalories', 'ThursCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="ThursCaloriesSpan">Please enter a valid number</span></td>
+                <td label="Friday"><input type="number" min="1500" max="5000" id="FriCalories" oninput="validateFormNumber('FriCalories', 'FriCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="FriCaloriesSpan">Please enter a valid number</span></td>
+                <td label="Saturday"><input type="number" min="1500" max="5000" id="SatCalories" oninput="validateFormNumber('SatCalories', 'SatCaloriesSpan')" onkeyup="CalorieAvg()"><span class="input-span" id="SatCaloriesSpan">Please enter a valid number</span></td>
+                <td label="Average" id="AverageCalories"></td>
             </tr>
             <tr>
 
                 <td>Protein</td>
-                <td><input type="number" min="0" id="SunProtein" oninput="validateFormNumber('SunProtein', 'SunProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="SunProteinSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="MonProtein" oninput="validateFormNumber('MonProtein', 'MonProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="MonProteinSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="TuesProtein" oninput="validateFormNumber('TuesProtein', 'TuesProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="TuesProteinSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="WedProtein" oninput="validateFormNumber('WedProtein', 'WedProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="WedProteinSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="ThursProtein" oninput="validateFormNumber('ThursProtein', 'ThursProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="ThursProteinSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="FriProtein" oninput="validateFormNumber('FriProtein', 'FriProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="FriProteinSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="SatProtein" oninput="validateFormNumber('SatProtein', 'SatProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="SatProteinSpan">Please enter a valid number</span></td>
-                <td id="AverageProtein">
+                <td label="Sunday"><input type="number" min="0" id="SunProtein" oninput="validateFormNumber('SunProtein', 'SunProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="SunProteinSpan">Please enter a valid number</span></td>
+                <td label="Monday"><input type="number" min="0" id="MonProtein" oninput="validateFormNumber('MonProtein', 'MonProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="MonProteinSpan">Please enter a valid number</span></td>
+                <td label="Tuesday"><input type="number" min="0" id="TuesProtein" oninput="validateFormNumber('TuesProtein', 'TuesProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="TuesProteinSpan">Please enter a valid number</span></td>
+                <td label="Wednesday"><input type="number" min="0" id="WedProtein" oninput="validateFormNumber('WedProtein', 'WedProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="WedProteinSpan">Please enter a valid number</span></td>
+                <td label="Thursday"><input type="number" min="0" id="ThursProtein" oninput="validateFormNumber('ThursProtein', 'ThursProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="ThursProteinSpan">Please enter a valid number</span></td>
+                <td label="Friday"><input type="number" min="0" id="FriProtein" oninput="validateFormNumber('FriProtein', 'FriProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="FriProteinSpan">Please enter a valid number</span></td>
+                <td label="Saturday"><input type="number" min="0" id="SatProtein" oninput="validateFormNumber('SatProtein', 'SatProteinSpan')" onkeyup="ProteinAvg()"><span class="input-span" id="SatProteinSpan">Please enter a valid number</span></td>
+                <td label="Average" id="AverageProtein">
                 </td>
             </tr>
             <tr>
 
                 <td>Fat</td>
-                <td><input type="number" min="0" id="SunFat" oninput="validateFormNumber('SunFat', 'SunFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="SunFatSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="MonFat" oninput="validateFormNumber('MonFat', 'MonFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="MonFatSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="TuesFat" oninput="validateFormNumber('TuesFat', 'TuesFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="TuesFatSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="WedFat" oninput="validateFormNumber('WedFat', 'WedFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="WedFatSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="ThursFat" oninput="validateFormNumber('ThursFat', 'ThursFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="ThursFatSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="FriFat" oninput="validateFormNumber('FriFat', 'FriFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="FriFatSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="SatFat" oninput="validateFormNumber('SatFat', 'SatFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="SatFatSpan">Please enter a valid number</span></td>
-                <td id="AverageFat">
+                <td label="Sunday"><input type="number" min="0" id="SunFat" oninput="validateFormNumber('SunFat', 'SunFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="SunFatSpan">Please enter a valid number</span></td>
+                <td label="Monday"><input type="number" min="0" id="MonFat" oninput="validateFormNumber('MonFat', 'MonFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="MonFatSpan">Please enter a valid number</span></td>
+                <td label="Tuesday"><input type="number" min="0" id="TuesFat" oninput="validateFormNumber('TuesFat', 'TuesFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="TuesFatSpan">Please enter a valid number</span></td>
+                <td label="Wednesday"><input type="number" min="0" id="WedFat" oninput="validateFormNumber('WedFat', 'WedFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="WedFatSpan">Please enter a valid number</span></td>
+                <td label="Thursday"><input type="number" min="0" id="ThursFat" oninput="validateFormNumber('ThursFat', 'ThursFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="ThursFatSpan">Please enter a valid number</span></td>
+                <td label="Friday"><input type="number" min="0" id="FriFat" oninput="validateFormNumber('FriFat', 'FriFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="FriFatSpan">Please enter a valid number</span></td>
+                <td label="Saturday"><input type="number" min="0" id="SatFat" oninput="validateFormNumber('SatFat', 'SatFatSpan')" onkeyup="FatAvg()"><span class="input-span" id="SatFatSpan">Please enter a valid number</span></td>
+                <td label="Average" id="AverageFat">
                 </td>
             </tr>
             <tr>
 
                 <td>Carbs</td>
-                <td><input type="number" min="0" id="SunCarbs" oninput="validateFormNumber('SunCarbs', 'SunCarbsSpan')" onkeyup="CarbAvg()"><span class="input-span" id="SunCarbsSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="MonCarbs" oninput="validateFormNumber('MonCarbs', 'MonCarbsSpan')" onkeyup="CarbAvg()"><span class="input-span" id="MonCarbsSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="TuesCarbs" oninput="validateFormNumber('TuesCarbs', 'TuesCarbsSpan')" onkeyup="CarbAvg()"><span class="input-span" id="TuesCarbsSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="WedCarbs" oninput="validateFormNumber('WedCarbs', 'WedCarbsSpan')" onkeyup="CarbAvg()"><span class="input-span" id="WedCarbsSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="ThursCarbs" oninput="validateFormNumber('ThursCarbs', 'ThursCarbsSpan')" onkeyup="CarbAvg()"><span class="input-span" id="ThursCarbsSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="FriCarbs" oninput="validateFormNumber('FriCarbs', 'FriCarbsSpan')" onkeyup="CarbAvg())"><span class="input-span" id="FriCarbsSpan">Please enter a valid number</span></td>
-                <td><input type="number" min="0" id="SatCarbs" oninput="validateFormNumber('SatCarbs', 'SatCarbsSpan')" onkeyup="CarbAvg()"><span class="input-span" id="SatCarbsSpan">Please enter a valid number</span></td>
-                <td id="AverageCarbs">
+                <td label="Sunday"><input type="number" min="0" id="SunCarbs" oninput="validateFormNumber('SunCarbs', 'SunCarbsSpan')" onkeyup="CarbAvg()"><span class="input-span" id="SunCarbsSpan">Please enter a valid number</span></td>
+                <td label="Monday"><input type="number" min="0" id="MonCarbs" oninput="validateFormNumber('MonCarbs', 'MonCarbsSpan')" onkeyup="CarbAvg()"><span class="input-span" id="MonCarbsSpan">Please enter a valid number</span></td>
+                <td label="Tuesday"><input type="number" min="0" id="TuesCarbs" oninput="validateFormNumber('TuesCarbs', 'TuesCarbsSpan')" onkeyup="CarbAvg()"><span class="input-span" id="TuesCarbsSpan">Please enter a valid number</span></td>
+                <td label="Wednesday"><input type="number" min="0" id="WedCarbs" oninput="validateFormNumber('WedCarbs', 'WedCarbsSpan')" onkeyup="CarbAvg()"><span class="input-span" id="WedCarbsSpan">Please enter a valid number</span></td>
+                <td label="Thursday"><input type="number" min="0" id="ThursCarbs" oninput="validateFormNumber('ThursCarbs', 'ThursCarbsSpan')" onkeyup="CarbAvg()"><span class="input-span" id="ThursCarbsSpan">Please enter a valid number</span></td>
+                <td label="Friday"><input type="number" min="0" id="FriCarbs" oninput="validateFormNumber('FriCarbs', 'FriCarbsSpan')" onkeyup="CarbAvg())"><span class="input-span" id="FriCarbsSpan">Please enter a valid number</span></td>
+                <td label="Saturday"><input type="number" min="0" id="SatCarbs" oninput="validateFormNumber('SatCarbs', 'SatCarbsSpan')" onkeyup="CarbAvg()"><span class="input-span" id="SatCarbsSpan">Please enter a valid number</span></td>
+                <td label="Average" id="AverageCarbs">
                 </td>
             </tr>
             

@@ -70,14 +70,6 @@ body {
 
 /* stylelint-disable-next-line selector-class-pattern */
 
-.calories {
-  display: flex;
-}
-
-.nutrients {
-  display: flex;
-}
-
 .macros-block {
   padding-left: 2.5%;
 }
@@ -253,6 +245,18 @@ button {
 }
 
 /* Change the layout of the navigation bar for all the screens that have a width less or equal than 500px */
+@media only screen and (max-width: 800px) {
+  .container {
+    display: initial;
+  }
+  
+  .calories {
+    display: initial;
+  }
+
+}
+
+/* Change the layout of the navigation bar for all the screens that have a width less or equal than 500px */
 @media only screen and (max-width: 500px) {
   button {
     /* Makes the button visible */
@@ -284,4 +288,20 @@ button {
   .container {
     display: initial;
   }
+  
+  table th {
+    display: none;
+  }  
+  
+  table td {
+    display: flex;
+  }
+  
+   table td::before {
+    content: attr(label);
+    font-weight: bold;
+    width: 120px;
+    min-width: 120px;
+  }
+}
 }
