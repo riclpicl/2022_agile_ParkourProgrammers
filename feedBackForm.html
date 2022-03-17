@@ -28,6 +28,8 @@
   </header>
   <body>
       <h2>Please provide your feedback on the MacroGo Tracker below:</h2>
+      <!--add method="post" action="/file.php to send form-->
+      <form name="myForm"  onsubmit="validateForm()" method="post">
 
       <table class="form-style">
         <tr>
@@ -37,7 +39,7 @@
               </label>
            </td>
            <td>
-              <input type="text" name="name" class="long"/>
+              <input type="text" id="name" class="long"/>
               <span class="error" id="errorname"></span>
            </td>
         </tr>
@@ -48,28 +50,29 @@
               </label>
            </td>
            <td>
-              <input type="email" name ="email" class ="long"/>
-              <span class="error" id ="erroremail"></span>
+              <input type="email" id="email" class="long"/>
+              <span class="error" id="erroremail"></span>
            </td>
         </tr>
         <tr>
            <td>
               <label>
-                 Message <span class ="required">*</span>
+                 Message <span class="required">*</span>
               </label>
            </td>
            <td>
-              <textarea name ="message" class ="long field-textarea"></textarea>
-              <span class ="error" id ="errormsg"></span>
+              <textarea name="message" id="message"></textarea>
+              <span class="error" id="errormsg"></span>
            </td>
         </tr>
         <tr>
            <td></td>
            <td>
-              <input type ="submit" value ="Send">      
-              <input type ="reset" value ="Reset"> 
+              <input type="submit" value="Send">      
+              <input type="reset" value="Reset"> 
            </td>
         </tr>
      </table>
+     </form>
   </body>
 </html>
