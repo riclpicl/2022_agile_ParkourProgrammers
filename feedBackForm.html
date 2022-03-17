@@ -27,42 +27,49 @@
     </nav>
   </header>
   <body>
-      <h2>Feedback</h2>
+      <h2>Please provide your feedback on the MacroGo Tracker below:</h2>
 
-      <p>Please provide your feedback on the MacroGo Tracker below:
-      <div class ="feedback-form">
-          <!--<form> elelment to process the input-->
-            <label>How do you rate your overall experience?</label>
-        <label class="radio-inline">
-            <input type="radio" name="experience" id="radio_experience" value="bad"> Bad
-        </label>
-        <label class="radio-inline">
-            <input type="radio" name="experience" id="radio_experience" value="average"> Average
-        </label>
-        <label class="radio-inline">
-            <input type="radio" name="experience" id="radio_experience" value="good"> Good
-        </label>
-        </p>
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-    
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-    
-        <label for="country">Country</label>
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-    
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-    
-        <input type="submit" value="Submit">
-    
-      </div>
-    
-    
+      <table class="form-style">
+        <tr>
+           <td>
+              <label>
+                 Your name <span class="required">*</span>
+              </label>
+           </td>
+           <td>
+              <input type="text" name="name" class="long"/>
+              <span class="error" id="errorname"></span>
+           </td>
+        </tr>
+        <tr>
+           <td>
+              <label>
+                Your email address <span class="required">*</span>
+              </label>
+           </td>
+           <td>
+              <input type="email" name ="email" class ="long"/>
+              <span class="error" id ="erroremail"></span>
+           </td>
+        </tr>
+        <tr>
+           <td>
+              <label>
+                 Message <span class ="required">*</span>
+              </label>
+           </td>
+           <td>
+              <textarea name ="message" class ="long field-textarea"></textarea>
+              <span class ="error" id ="errormsg"></span>
+           </td>
+        </tr>
+        <tr>
+           <td></td>
+           <td>
+              <input type ="submit" value ="Send">      
+              <input type ="reset" value ="Reset"> 
+           </td>
+        </tr>
+     </table>
   </body>
 </html>
