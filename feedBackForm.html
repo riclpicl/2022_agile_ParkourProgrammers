@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MacroGoTracker</title>
+    <link rel="stylesheet" href="css/mgt.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/MacroGo.js" defer></script>
+    <script src="js/mobileMenu.js" defer></script>
+  </head>
+  <header>
+    <nav>
+      <ul>
+
+        <button> 🞬 </button>
+        <li>
+          <a href ="index.html">MacroGoTracker</a>
+        </li>
+        <li><a href ="calculationInfo.html">MacroInfo</a>
+        </li>
+        <li>
+          <a href="feedBackForm.html">MacroGoContact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+      <h2>Feedback</h2>
+
+      <p>Please provide your feedback on the MacroGo Tracker below:
+      <div class ="feedback-form">
+          <!--<form> elelment to process the input-->
+            <label>How do you rate your overall experience?</label>
+        <label class="radio-inline">
+            <input type="radio" name="experience" id="radio_experience" value="bad"> Bad
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="experience" id="radio_experience" value="average"> Average
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="experience" id="radio_experience" value="good"> Good
+        </label>
+        </p>
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+    
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    
+        <input type="submit" value="Submit">
+    
+      </div>
+    
+    
+  </body>
+</html>
