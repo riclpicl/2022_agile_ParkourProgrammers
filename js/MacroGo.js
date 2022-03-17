@@ -391,3 +391,54 @@ function FatAvg() {
   // display and output average Fat
   document.getElementById("AverageFat").innerText = Math.round(avgFat);
 }
+
+
+function validateForm()                                    
+{ 
+    var name = document.getElementById("name");               
+    var email = document.getElementById("email");    
+    var message = document.getElementById("message");   
+   
+    if (name.value == "")                                  
+    { 
+        document.getElementById('errorname').innerText="Please enter a valid name";  
+        name.focus(); 
+        return false; 
+    }else{
+        document.getElementById('errorname').innerText="";  
+    }
+       
+    if (email.value == "")                                   
+    { 
+        document.getElementById('erroremail').innerText="Please enter a valid email address"; 
+        email.focus(); 
+        return false; 
+    }else{
+        document.getElementById('erroremail').innerText="";  
+    }
+   
+    if (email.value.indexOf("@", 0) < 0)                 
+    { 
+        document.getElementById('erroremail').innerText="Please enter a valid email address"; 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (email.value.indexOf(".", 0) < 0)                 
+    { 
+        document.getElementById('erroremail').innerText="Please enter a valid email address"; 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (message.value == "")                           
+    {
+        document.getElementById('errormsg').innerText="Please enter a valid message"; 
+        message.focus(); 
+        return false; 
+    }else{
+        document.getElementById('errormsg').innerText="";  
+    }
+   
+    return true; 
+}
