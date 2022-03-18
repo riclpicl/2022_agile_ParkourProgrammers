@@ -50,9 +50,10 @@ ul {
 
 /* Temporary borders */
 body {
-  margin: 10px;
-  padding: 10px;
+  margin: 0px;
+  padding: 0px;
   background-color: #90c2e7;
+  overflow-x: hidden;
 }
 
 .container {
@@ -310,7 +311,7 @@ button {
   font-size: 1.2em;
 }
 
-/* Change the layout of the navigation bar for all the screens that have a width less or equal than 500px */
+/* Change the layout of the navigation bar for all the screens that have a width less or equal than 800px */
 @media only screen and (max-width: 800px) {
   .container {
     display: initial;
@@ -394,7 +395,7 @@ button {
 }
 
 
-  /* Add a black background color to the top navigation */
+  /* Add a background color to the top navigation */
 .topnav {
     background-color: #4E8098;
     overflow: hidden;
