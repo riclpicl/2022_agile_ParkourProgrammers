@@ -21,7 +21,7 @@ function validateFormNumber(numToVal, fetchSpanId) {
   }
 }
 
-z
+
 function validateInputLength (fieldId, maxLength, lengthText) {
   
   var elementId = document.getElementById(fieldId);
